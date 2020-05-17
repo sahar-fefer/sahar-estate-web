@@ -1,0 +1,24 @@
+@import './varables';
+
+body {
+    color: $text;
+    outline: none !important;
+    width: 100%;
+
+    li {
+      list-style: none;
+    }
+    button, button:hover, a, a:hover {
+      color: $text;
+    }
+    button:hover, a:hover {
+      text-decoration: none;
+    }
+
+    // Global Classes
+    .perfect-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  }
