@@ -121,3 +121,7 @@ body {
       color: #38A1F3; }
     #footer .icons-wrapper .facebook:hover {
       color: #4267b2; }
+
+#search {
+  background-color: salmon;
+  text-align: center; }
