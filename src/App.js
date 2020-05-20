@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 // components
-import Header from './components/organisems/header/header';
-import Home from './components/pages/home/home';
+import Header from './components/header/header';
+import Home from './components/home/home';
 
 function App() {
   return (
