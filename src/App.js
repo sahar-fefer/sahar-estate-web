@@ -7,6 +7,7 @@ import {
 
 // components
 import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           
         </Switch>
       </div>
+      <Footer/>
     </Router>
   );
 }
