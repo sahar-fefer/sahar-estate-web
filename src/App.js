@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 // components
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
+import Header from './components/organisems/header/header';
+import Home from './components/pages/home/home';
 
 function App() {
   return (
@@ -15,10 +15,32 @@ function App() {
       <Header />
       <div>
         <Switch>
-          
+        <Route path="/buy">
+            {/* {apartments.length > 0 && cities.length > 0 && */}
+            <Home
+              type={'buy'}
+              title={"Discover your perfect home"}
+              description={"With the most complete source of homes for sale & real estate near you"} />
+            {/* } */}
+          </Route>
+          <Route path="/rent">
+            <Home
+              type={'rent'}
+              title={"Discover your perfect rental"}
+              description={"Search nearby apartments, condos, and homes for rent"} />
+          </Route>
+          <Route path="/sell">
+            <div>it will be sell page</div>
+            {/* <Sell /> */}
+          </Route>
+          <Route path="/">
+            <Home
+              type={'home'}
+              title={"Discover your perfect home"}
+              description={"With the most complete source of homes for sale & rent real estate"} />
+          </Route>
         </Switch>
       </div>
-      <Footer/>
     </Router>
   );
 }
