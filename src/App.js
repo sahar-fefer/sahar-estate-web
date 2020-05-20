@@ -1,10 +1,23 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+// components
+import Header from './components/header/header';
 
 function App() {
   return (
-    <div>
-      hello
-    </div>
+    <Router>
+      <Header />
+      <div>
+        <Switch>
+          
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
