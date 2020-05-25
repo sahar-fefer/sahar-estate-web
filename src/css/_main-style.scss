@@ -1,24 +1,42 @@
 @import './varables';
 
 body {
-    color: $text;
-    outline: none !important;
-    width: 100%;
+  color: $text;
+  outline: none !important;
+  width: 100%;
 
-    li {
-      list-style: none;
-    }
-    button, button:hover, a, a:hover {
-      color: $text;
-    }
-    button:hover, a:hover {
-      text-decoration: none;
-    }
-
-    // Global Classes
-    .perfect-center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+  li {
+    list-style: none;
   }
+  
+  button, button:hover, a, a:hover {
+    color: $text;
+  }
+  
+  button:hover, a:hover {
+    text-decoration: none;
+  }
+
+  // Global Classes
+  .perfect-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .cover-photo {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .bottom-line {
+    border-bottom: 3px solid transparent;
+    transition: all .2s ease-in-out;
+    
+    &:hover {
+      border-bottom: 3px solid $primary;
+    }
+  }
+}
