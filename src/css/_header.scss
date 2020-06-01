@@ -40,17 +40,59 @@
 
     //////////////////// Sign ////////////////////
     .sign {
-        ul {
-            display: none;
+        .header-option-wrapper {
             justify-content: flex-end;
-            li {
+            padding-left: 4px;
+            padding-right: 4px;
+            
+            .header-option {
+                display: none;
                 text-align: right;
                 padding: 0 10px;
+                cursor: pointer;
             }
         }
-        .icon {
+
+        .icon-astronaut {
             text-align: right;
             font-size: 1.3rem;
+        }
+
+        .modal {
+            .sign-type-wrapper {
+                width: 100%;
+
+                .sign-type {
+                    border: none;
+                    outline: none;
+
+                    &.chosen {
+                        background: $primary_light;
+                    }
+                }
+            }
+            .modal-body {
+                .input {
+                    border: none;
+                    border-bottom: 1px solid $text;
+                    outline: none;
+                }
+
+                .icons {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+
+                .send {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    padding: .4rem;
+                    border-radius: 50%; 
+                    background-color: $primary_light;
+                    border: 1px solid $primary;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
