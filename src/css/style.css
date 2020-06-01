@@ -63,18 +63,47 @@ body {
   -ms-flex-pack: center;
   justify-content: center; }
 
-#header .sign ul {
-  display: none;
+#header .sign .header-option-wrapper {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end; }
-  #header .sign ul li {
+  justify-content: flex-end;
+  padding-left: 4px;
+  padding-right: 4px; }
+  #header .sign .header-option-wrapper .header-option {
+    display: none;
     text-align: right;
-    padding: 0 10px; }
+    padding: 0 10px;
+    cursor: pointer; }
 
-#header .sign .icon {
+#header .sign .icon-astronaut {
   text-align: right;
   font-size: 1.3rem; }
+
+#header .sign .modal .sign-type-wrapper {
+  width: 100%; }
+  #header .sign .modal .sign-type-wrapper .sign-type {
+    border: none;
+    outline: none; }
+    #header .sign .modal .sign-type-wrapper .sign-type.chosen {
+      background: #00d99d; }
+
+#header .sign .modal .modal-body .input {
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none; }
+
+#header .sign .modal .modal-body .icons {
+  width: 1.3rem;
+  height: 1.3rem; }
+
+#header .sign .modal .modal-body .send {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .4rem;
+  border-radius: 50%;
+  background-color: #00d99d;
+  border: 1px solid #00d99d;
+  cursor: pointer; }
 
 #footer {
   background-color: #333;
