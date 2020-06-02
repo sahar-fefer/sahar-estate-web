@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 import { FaUserAstronaut, FaPhone, FaUserNinja } from 'react-icons/fa';
 import { MdEmail, MdFingerprint, MdSend } from 'react-icons/md';
 
