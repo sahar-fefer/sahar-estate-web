@@ -10,11 +10,11 @@ import {
 } from 'react-icons/fa';
 
 const Footer = props => {
-    const logos = [{ icon: 'FaFacebookSquare', name: 'facebook' },
-    { icon: 'FaTwitterSquare', name: 'twitter' },
-    { icon: 'FaInstagramSquare', name: 'instagram' },
-    { icon: 'FaLinkedin', name: 'linkedin' },
-    { icon: 'FaPinterestSquare', name: 'pinterest' }]
+    // const logos = [{ icon: 'FaFacebookSquare', name: 'facebook' },
+    // { icon: 'FaTwitterSquare', name: 'twitter' },
+    // { icon: 'FaInstagramSquare', name: 'instagram' },
+    // { icon: 'FaLinkedin', name: 'linkedin' },
+    // { icon: 'FaPinterestSquare', name: 'pinterest' }]
     return (
         <div id="footer">
             <div className="container-fluid">
@@ -34,17 +34,17 @@ const Footer = props => {
                                 </div>
                             )})
                         } */}
-                        <div><a href="https://www.facebook.com" target="_blank"><FaFacebookSquare className='footer-icon facebook' /></a>
+                        <div><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank"><FaFacebookSquare className='footer-icon facebook' /></a>
                         </div>
-                        <div><a href="https://www.twitter.com" target="_blank"><FaTwitterSquare className={"footer-icon twitter"} /></a></div>
-                        <div><a href="https://www.linkedin.com" target="_blank"><FaLinkedin className={"footer-icon linkedin"} /></a></div>
+                        <div><a href="https://www.twitter.com" rel="noopener noreferrer" target="_blank"><FaTwitterSquare className={"footer-icon twitter"} /></a></div>
+                        <div><a href="https://www.linkedin.com" rel="noopener noreferrer" target="_blank"><FaLinkedin className={"footer-icon linkedin"} /></a></div>
                         <div className={"instagram-wrapper"}>
-                            <a href="https://www.instagram.com" target="_blank">
+                            <a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">
                                 <FaInstagramSquare className={"footer-icon instagram"} />
                                 <FaInstagramSquare className={"footer-icon instagram-hover"} />
                             </a>
                         </div>
-                        <div><a href="https://www.pinterest.com" target="_blank"><FaPinterestSquare className={"footer-icon pinterest"} /></a>
+                        <div><a href="https://www.pinterest.com" rel="noopener noreferrer" target="_blank"><FaPinterestSquare className={"footer-icon pinterest"} /></a>
                         </div>
                     </div>
                 </div>

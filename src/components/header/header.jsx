@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 // My Components
 import Options from './options';

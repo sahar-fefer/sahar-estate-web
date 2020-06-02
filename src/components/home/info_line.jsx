@@ -8,11 +8,11 @@ const InfoLine = ({ info }) => {
             </div>
             <div className="numbers row">
                 {
-                    info.map(section => {
+                    info.map((section, key) => {
                         return (
-                            <div className="section perfect-center col-6 col-lg-auto">
-                                <p><a href="" className="number">{section.number}</a></p>
-                                <p><a href="" className="description">{section.description}</a></p>
+                            <div className="section perfect-center col-6 col-lg-auto" key={key}>
+                                <div className="number">{section.number}</div>
+                                <div className="description">{section.description}</div>
                             </div>
                         )
                     })
