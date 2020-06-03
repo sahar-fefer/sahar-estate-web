@@ -15,5 +15,14 @@ $secondary: #f2c642;
 $secondary_light: #f2c642;
 $secondary_dark: #f2c642;
 $secondary_hover: #f2c642;
+$green: #088620;
 
 $transition: 'all .2s ease-in-out';
+
+/* /////////////////////////    card    /////////////////////////// */
+$shadow-card: 0 2px 15px -2px #a8a8a8;
+$shadow-card-hover: 0 2px 15px 2px #a8a8a8;
+$border-radius: .25rem;
+$position-inside-card: 16px;
+$padding-status: 2px 5px;
+$fill-heart-hover: rgba(225, 0, 0, 0.5);

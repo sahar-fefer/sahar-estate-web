@@ -30,7 +30,8 @@ const HomeSearch = ({ title, description }) => {
                                     ))
                                 } */}
                             </select>
-                            <input className="col-auto submit" type="submit" name="submit" value="Search">
+                            {/* <input className="col-auto submit" type="submit" name="submit" value="Search"> */}
+                                <Link  className="col-auto submit" to='/gallery'/>
                                 {/* <Link to={{
                                     pathname: "/gallery",
                                     state: {
@@ -39,7 +40,7 @@ const HomeSearch = ({ title, description }) => {
                                         sale_status
                                     }
                                 }} /> */}
-                            </input>
+                            {/* </input> */}
                         </div>
                     </form>
                 </div>

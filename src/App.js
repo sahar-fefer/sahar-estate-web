@@ -8,6 +8,7 @@ import {
 // components
 import Header from './components/header/header';
 import Home from './components/home/home';
+import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           <Route path="/sell">
             <div>it will be sell page</div>
             {/* <Sell /> */}
+          </Route>
+          <Route path="/gallery">
+            <GalleryAndFilter/>
           </Route>
           <Route path="/">
             <Home
