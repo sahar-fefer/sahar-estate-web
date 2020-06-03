@@ -1,0 +1,77 @@
+@import "_variables.scss";
+
+#gallery {
+  .apartmentCard {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    a {
+      text-decoration: none;
+      color: #333333;
+    }
+  }
+
+  .wrapperCard {
+    border-radius: $border-radius;
+    box-shadow: $shadow-card-hover;
+  }
+
+  .wrapperCard:hover {
+    box-shadow: $shadow-card;
+  }
+
+  .imageWrapper {
+    position: relative;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+  }
+
+  .status {
+    background-color: $green;
+    color: white;
+    position: absolute;
+    top: $position-inside-card;
+    left: $position-inside-card;
+    padding: $padding-status;
+  }
+
+  .price {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: $position-inside-card;
+    left: $position-inside-card;
+    margin: 0;
+  }
+
+  .heart {
+    position: absolute;
+    right: $position-inside-card;
+  }
+
+  .heart path:hover {
+    fill: $fill-heart-hover;
+  }
+
+  .city {
+    margin-left: 15px;
+  }
+
+  .infoWrapper {
+    height: 75px;
+  }
+}
+
+
+///////////////////   btn show more   ///////////////////
+
+#loadBtn {
+  margin: 10px;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}

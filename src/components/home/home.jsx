@@ -1,9 +1,9 @@
 import React from 'react';
 
 // components
-import HomeSearch from './home_search';
+import HomeSearch from './homeSearch';
 // import LineGallery from './';
-import InfoLine from './info_line';
+import InfoLine from './infoLine';
 import Footer from '../footer/footer';
 
 const Home = ({type, title, description}) => {
