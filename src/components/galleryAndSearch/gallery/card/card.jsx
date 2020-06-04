@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
     return (
-        <div className={`apartmentCard col-lg-3 col-md-6`}>
+        <div className={`apartmentCard col-sm-6 col-md-4`}>
             <Link to={`/apartment/${data.id}`}>
                 <header className={"headerCard"}>
                     {data.title}

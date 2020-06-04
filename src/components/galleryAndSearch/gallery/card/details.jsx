@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Details = () => {
-    const { currentCard } = this.props;
-
+const Details = ({ currentCard }) => {
     return (
         <div className={"infoWrapper container"}>
             <div className={"row"}>

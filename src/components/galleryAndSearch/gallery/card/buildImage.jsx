@@ -2,14 +2,15 @@ import React from 'react';
 // import React, {useState} from 'react';
 
 const BuildImage = ({ currentCard }) => {
-    const mainImage = `/images/apartments/${currentCard.main_image}`;
+    console.log(currentCard.main_image, 'apartment.main_image');
+    const mainImage = currentCard.main_image;
     const templateImage = `/images/apartments/template`;
     // const [isLoading, setIsLoading] = useState(true);
 
     const imageStyle = {
         width: "100%",
         height: "170px",
-        backgroundImage: `url(${currentCard.main_image ? mainImage : templateImage})`,
+        backgroundImage: `url(${mainImage ? mainImage : templateImage})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover"

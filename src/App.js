@@ -16,7 +16,7 @@ function App() {
       <Header />
       <div>
         <Switch>
-        <Route path="/buy">
+          <Route path="/buy">
             {/* {apartments.length > 0 && cities.length > 0 && */}
             <Home
               type={'buy'}
@@ -35,7 +35,7 @@ function App() {
             {/* <Sell /> */}
           </Route>
           <Route path="/gallery">
-            <GalleryAndFilter/>
+            <GalleryAndFilter />
           </Route>
           <Route path="/">
             <Home
