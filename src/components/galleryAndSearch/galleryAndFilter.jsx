@@ -7,7 +7,10 @@ import { withRouter } from 'react-router-dom';
 import ClineFilter from './filter/clineFilter';
 import Gallery from './gallery/gallery';
 
-const GalleryAndFilter = (apartments) => {    
+import { apartments } from '../../app-data/apartment-data';
+
+const GalleryAndFilter = () => {
+    console.log('apartments', apartments);
     // async componentDidMount() {
     //     const selectedCountry = this.props.location.state.selectedCountry ? this.props.location.state.selectedCountry : "";
     //     const selectedCountryName = this.props.location.state.selectedCountryName ? this.props.location.state.selectedCountryName : "";
@@ -120,12 +123,12 @@ const GalleryAndFilter = (apartments) => {
                 return { ...state, 'minRooms': action.value };
             case 'maxRooms':
                 return { ...state, 'maxRooms': action.value };
-            case 'saleStatus': 
-                return {...state, 'saleStatus': action.value};
-            case 'countryId': 
-                return {...state, 'selectedCountry': action.value}
-            case 'cityId': 
-                return {...state, 'selectedCity': action.value}
+            case 'saleStatus':
+                return { ...state, 'saleStatus': action.value };
+            case 'countryId':
+                return { ...state, 'selectedCountry': action.value }
+            case 'cityId':
+                return { ...state, 'selectedCity': action.value }
         }
     } // onClick={() => dispatch({ type: 'minBath', value: '2' })}
 
@@ -144,7 +147,7 @@ const GalleryAndFilter = (apartments) => {
                 minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} maxBeds={maxBeds} minRooms={minRooms} maxRooms={maxRooms}
                 resetFilters={resetFilters} countries={state.countries} cities={state.cities} /> */}
 
-            <Gallery />
+            <Gallery items={apartments} />
             {/* items={filteredApartments} */}
         </div>
     );
