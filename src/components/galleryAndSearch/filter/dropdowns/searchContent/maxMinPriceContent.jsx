@@ -10,15 +10,16 @@ class MaxMinPriceContent extends React.Component {
     }
 
     render() {
+        const { listPrices, handleInputChange, minPrice, maxPrice, type } = this.props;
         return (
             <div className="col-6 inputPrice">
                 <div className="buttonInputStyle d-flex align-items-center">  {/*onClick={this.props.toggleDropDown}*/}
-                    <span>$</span><input className={"inputInsidePrice"} placeholder={`No ${this.props.type}`}/>
+                    <input className={"inputInsidePrice"} placeholder={maxPrice || minPrice ? maxPrice || minPrice : `$ No ${type}`} />
                 </div>
                 {this.state.open && (
                     <ul className="bigPriceList text-left">
-                        {this.props.listPrices.map((price, i) => {
-                            return <li key={i}>{price}</li>
+                        {listPrices.map((price, i) => { //name={minPrice ? minPrice : maxPrice} name={minPrice || maxPrice && minPrice || maxPrice}
+                            return <li data-name={minPrice ? "minPrice" : "maxPrice"} value={price} key={i} onClick={handleInputChange} >${price}</li>
                         })}
                     </ul>
                 )}

@@ -2,7 +2,6 @@ import React from 'react';
 // import React, {useState} from 'react';
 
 const BuildImage = ({ currentCard }) => {
-    console.log(currentCard.main_image, 'apartment.main_image');
     const mainImage = currentCard.main_image;
     const templateImage = `/images/apartments/template`;
     // const [isLoading, setIsLoading] = useState(true);

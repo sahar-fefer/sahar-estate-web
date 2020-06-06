@@ -1,30 +1,53 @@
 import React from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-const ClineFilter = ({ minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
+const ClineFilter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
     return (
         <div>
-            <form className="search-option form-inline">
-                <label for="tentacles">Min Price:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
+            <form className="search-option form-inline row" >
+                <label htmlFor="city">Cities:</label>
+                <select className={"buttonStyle cities col-auto"} name="city" onChange={handleInputChange}>
+                    <option name='placeholder' value={""}>Cities</option>
+                    {
+                        cities.length &&
+                        cities.map((city, key) => (
+                            <option value={city.name} key={key}>{city.name}</option>
+                        ))
+                    }
+                </select>
+
+                <label htmlFor="minPrice">Min Price:</label>
+                <input className='col-auto' type="number" id="minPrice" name="minPrice" value={minPrice} onChange={handleInputChange} />
+                {/* {minPrice && minPrice}
+                </input> */}
                 <span>$</span>
 
-                <label for="tentacles">Max Price:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
+                <label htmlFor="maxPrice">Max Price:</label>
+                <input className='col-auto' type="number" id="maxPrice" name="maxPrice" value={maxPrice} onChange={handleInputChange} />
+                {/* {maxPrice && maxPrice}
+                </input> */}
                 <span>$</span>
 
-                <label for="tentacles">Min Bath:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
+                <label htmlFor="minBath">Min Bath:</label>
+                <input className='col-auto' type="number" id="minBath" name="minBath" value={minBath} onChange={handleInputChange} />
+                {/* {minBath && minBath}
+                </input> */}
 
-                <label for="tentacles">Max Bath:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
+                <label htmlFor="maxBath">Max Bath:</label>
+                <input className='col-auto' type="number" id="maxBath" name="maxBath" value={maxBath} onChange={handleInputChange} />
+                {/* {maxBath && maxBath}
+                </input> */}
 
-                <label for="tentacles">Min Rooms:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
+                <label htmlFor="minRooms">Min Rooms:</label>
+                <input className='col-auto' type="number" id="minRooms" name="minRooms" value={minRooms} onChange={handleInputChange} />
+                {/* {minRooms && minRooms}
+                </input> */}
 
-                <label for="tentacles">Max Rooms:</label>
-                <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
-                <button className="submitBtn buttonStyle search-button">
+                <label htmlFor="maxRooms">Max Rooms:</label>
+                <input className='col-auto' type="number" id="maxRooms" name="maxRooms" value={maxRooms} onChange={handleInputChange} />
+                {/* {maxRooms ? maxRooms : ''}
+                </input> */}
+                <button className="submitBtn buttonStyle search-button" onClick={handleSubmit}>
                     <BsSearch /></button>
             </form>
         </div>
