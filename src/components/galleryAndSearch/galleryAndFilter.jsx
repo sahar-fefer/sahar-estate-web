@@ -18,7 +18,8 @@ const initialFilter = {
     maxBath: '',
     minRooms: '',
     maxRooms: '',
-    city: ''
+    property_type: '',
+    city_id: ''
 };
 
 const filterReducer = (state, { field, value }) => {
@@ -34,37 +35,44 @@ const GalleryAndFilter = () => {
 
     const handleInputChange = (e) => {
         dispatch({ field: e.target.name, value: e.target.value })
+        console.log('filterBy', filterBy);
+        // console.log('e.target.name', e.target.name);
+        // console.log('e.target.value', e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('filterBy', filterBy);
         setFilteredApartments(updateGalleryItems());
         // console.log('filteredApartments', filteredApartments);
     };
 
     const updateGalleryItems = () => {
-        const { city, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
+        const { city_id, property_type, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
         let updated = apartments;
-        if (city) {
-            updated = updated.filter(apartment => cities.find(city => city.id === apartment.cityId).label.toLowerCase().includes(city.toLowerCase()));
+        if (city_id) {
+            updated = updated.filter(apartment => apartment.cityId === parseInt(city_id));
+        }
+        if (property_type) {
+            updated = updated.filter(apartment => apartment.property_type === property_type);
         }
         if (minPrice) {
-            updated = updated.filter(apartment => apartment.price >= minPrice);
+            updated = updated.filter(apartment => apartment.price >= parseInt(minPrice));
         }
         if (maxPrice) {
-            updated = updated.filter(apartment => apartment.price <= maxPrice);
+            updated = updated.filter(apartment => apartment.price <= parseInt(maxPrice));
         }
         if (minBath) {
-            updated = updated.filter(apartment => apartment.number_of_bath >= minBath);
+            updated = updated.filter(apartment => apartment.number_of_bath >= parseInt(minBath));
         }
         if (maxBath) {
-            updated = updated.filter(apartment => apartment.number_of_bath <= maxBath);
+            updated = updated.filter(apartment => apartment.number_of_bath <= parseInt(maxBath));
         }
         if (minRooms) {
-            updated = updated.filter(apartment => apartment.number_of_rooms >= minRooms);
+            updated = updated.filter(apartment => apartment.number_of_rooms >= parseInt(minRooms));
         }
         if (maxRooms) {
-            updated = updated.filter(apartment => apartment.number_of_rooms <= maxRooms);
+            updated = updated.filter(apartment => apartment.number_of_rooms <= parseInt(maxRooms));
         }
         console.log('updated', updated);
         return updated;
@@ -73,23 +81,7 @@ const GalleryAndFilter = () => {
     const { minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms, city } = filterBy;
     return (
         <div className={"container-fluid"}>
-            <ClineFilter
-                cities={cities}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-                minPrice={minPrice}
-                maxPrice={maxPrice}
-                minBath={minBath}
-                maxBath={maxBath}
-                minRooms={minRooms}
-                maxRooms={maxRooms}
-                city={city} />
-            {/* <Filter handleInputChange={handleInputChange} handleSubmit={handleSubmit}
-                selectCountry={selectCountry} selectCity={selectCity}
-                selectedCountry={state.selectedCountry} selectedCountryName={state.selectedCountryName} selectedCity={state.selectedCity}
-                minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} maxBeds={maxBeds} minRooms={minRooms} maxRooms={maxRooms}
-                resetFilters={resetFilters} countries={state.countries} cities={state.cities} /> */}
-            {/* <Filter
+            {/* <ClineFilter
                 cities={cities}
                 handleInputChange={handleInputChange}
                 handleSubmit={handleSubmit}
@@ -100,6 +92,22 @@ const GalleryAndFilter = () => {
                 minRooms={minRooms}
                 maxRooms={maxRooms}
                 city={city} /> */}
+            {/* <Filter handleInputChange={handleInputChange} handleSubmit={handleSubmit}
+                selectCountry={selectCountry} selectCity={selectCity}
+                selectedCountry={state.selectedCountry} selectedCountryName={state.selectedCountryName} selectedCity={state.selectedCity}
+                minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} maxBeds={maxBeds} minRooms={minRooms} maxRooms={maxRooms}
+                resetFilters={resetFilters} countries={state.countries} cities={state.cities} /> */}
+            <Filter
+                cities={cities}
+                handleInputChange={handleInputChange}
+                handleSubmit={handleSubmit}
+                minPrice={minPrice}
+                maxPrice={maxPrice}
+                minBath={minBath}
+                maxBath={maxBath}
+                minRooms={minRooms}
+                maxRooms={maxRooms}
+                city={city} />
             <Gallery items={filteredApartments} />
         </div>
     );

@@ -1,75 +1,75 @@
-import React from "react";
+import React, { useState } from 'react';
+import { BsSearch } from 'react-icons/bs';
+
 import Dropdown from "./dropdowns/dropdown";
 import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
 import BedsOrRooms from "./dropdowns/searchContent/bedsOrRooms";
 
-import { BsSearch } from 'react-icons/bs';
-class Filter extends React.Component {
-    constructor(props) {
-        super(props);
-        const { handleInputChange, minPrice, maxPrice, minBeds, maxBeds, minRooms, maxRooms } = this.props;
-        this.state = {
-            activeDropdown: -1,
-            price: {
-                btnName: "Price",
-                title: "Price Range",
-                content: <LargePriceContent handleInputChange={handleInputChange} minPrice={minPrice} maxPrice={maxPrice} />
-            },
-            beds: {
-                btnName: "Beds",
-                title: "Bedrooms",
-                content: <BedsOrRooms title={"Bedrooms"} handleInputChange={handleInputChange} minBeds={minBeds} maxBeds={maxBeds} />
-            },
-            rooms: {
-                btnName: "Rooms",
-                title: "Rooms",
-                content: <BedsOrRooms title={"Rooms"} handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} />
-            }
+const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
+    const [activeDropdown, setActiveDropdown] = useState(-1);
+    const dropdownsData = {
+        priceDrop: {
+            btnName: "Price",
+            title: "Price Range",
+            content: <LargePriceContent handleInputChange={handleInputChange} minPrice={minPrice} maxPrice={maxPrice} />
+        },
+        bedsDrop: {
+            btnName: "Bath",
+            title: "Bathrooms",
+            content: <BedsOrRooms handleInputChange={handleInputChange} minBath={minBath} maxBath={maxBath} type={'Bath'} />
+        },
+        roomsDrop: {
+            btnName: "Rooms",
+            title: "Rooms",
+            content: <BedsOrRooms handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} type={'Rooms'} />
         }
     }
 
-    toggleDropdownItems = (e, index) => {
+    const property_types = ['apartment', 'condo', 'land', 'house', 'ranch'];
+
+    const { priceDrop, bedsDrop, roomsDrop } = dropdownsData;
+
+    const toggleDropdownItems = (e, index) => {
         e.preventDefault();
-        this.setState({
-            activeDropdown: index === this.state.activeDropdown ? -1 : index
-        })
+        setActiveDropdown(index === activeDropdown ? -1 : index);
     };
 
-    render() {
-        const { handleSubmit, selectCountry, selectCity, countries, cities, selectedCountryName,
-            selectedCountry, selectedCity, minPrice, maxPrice, minBeds, maxBeds, minRooms, maxRooms } = this.props;
-        const { activeDropdown, price, beds, rooms, resetFilters } = this.state;
-        // console.log(minPrice, maxPrice, minBeds, maxBeds, minRooms, maxRooms);
-        return (
-            <div id={"searchNav"}>
-                <form className="search-option form-inline">
-                    <select className={"buttonStyle cities col-auto"} name="city_id" onChange={selectCity}>
-                        <option value={""}>Cities</option>
-                        {
-                            cities.length &&
-                            cities.map(city => (
-                                <option value={city.id}>{city.name}</option>
-                            ))
-                        }
-                    </select>
-                    <Dropdown isOpen={activeDropdown === 1} toggleDropdown={(e) => this.toggleDropdownItems(e, 1)}
-                        btnName={price.btnName} title={price.title} content={price.content} />
-                    <Dropdown isOpen={activeDropdown === 2} toggleDropdown={(e) => this.toggleDropdownItems(e, 2)}
-                        btnName={beds.btnName} title={beds.title} content={beds.content} />
-                    <Dropdown isOpen={activeDropdown === 3} toggleDropdown={(e) => this.toggleDropdownItems(e, 3)}
-                        btnName={rooms.btnName} title={rooms.title} content={rooms.content} />
-                    <button className="submitBtn buttonStyle search-button" onClick={handleSubmit}>
-                        <BsSearch />
-                    </button>
-                </form>
-                {/* <div className={"pill-button"}>
-                    <button className={"button-list pill-buttons"}>List</button>
-                    <button className={"button-map pill-buttons"}>Map</button>
-                </div> */}
-            </div>
-        )
-
-    }
+    return (
+        <div id={"searchNav"}>
+            <form className="search-option form-inline">
+                <select className={"buttonStyle cities col-3"} name="city_id" onClick={handleInputChange}>
+                    <option value={""} disabled selected hidden>Cities</option>
+                    {
+                        cities.length &&
+                        cities.map(city => (
+                            <option value={city.id}>{city.name}</option>
+                        ))
+                    }
+                </select>
+                <select className={"buttonStyle cities col-3 d-none d-md-block"} name="property_type" onClick={handleInputChange}>
+                    <option value={""} disabled selected hidden>Property Type</option>
+                    {
+                        property_types.map(property_type => (
+                            <option value={property_type}>{property_type}</option>
+                        ))
+                    }
+                </select>
+                <Dropdown isOpen={activeDropdown === 1} toggleDropdown={(e) => toggleDropdownItems(e, 1)}
+                    btnName={priceDrop.btnName} title={priceDrop.title} content={priceDrop.content} />
+                <Dropdown isOpen={activeDropdown === 2} toggleDropdown={(e) => toggleDropdownItems(e, 2)}
+                    btnName={bedsDrop.btnName} title={bedsDrop.title} content={bedsDrop.content} />
+                <Dropdown isOpen={activeDropdown === 3} toggleDropdown={(e) => toggleDropdownItems(e, 3)}
+                    btnName={roomsDrop.btnName} title={roomsDrop.title} content={roomsDrop.content} />
+                <button className="submitBtn buttonStyle search-button" onClick={handleSubmit}>
+                    <BsSearch />
+                </button>
+            </form>
+            {/* <div className={"pill-button"}>
+                <button className={"button-list pill-buttons"}>List</button>
+                <button className={"button-map pill-buttons"}>Map</button>
+            </div> */}
+        </div>
+    );
 };
 
 export default Filter;
