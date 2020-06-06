@@ -4,7 +4,7 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 7,
-        price: "21336",
+        price: "57832",
         number_of_rooms: 4,
         number_of_bath: 3,
         sqft: 7500,
@@ -22,7 +22,7 @@ let apartments = [
         userId: 3,
         address: '330 3rd Ave',
         cityId: 6,
-        price: "34336",
+        price: "14336",
         number_of_rooms: 2,
         number_of_bath: 1,
         sqft: 500,
@@ -30,7 +30,7 @@ let apartments = [
         for_rent: true, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_2.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -40,9 +40,9 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 5,
-        price: "21336",
+        price: "51336",
         number_of_rooms: 4,
-        number_of_bath: 3,
+        number_of_bath: 1,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
@@ -58,15 +58,15 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 4,
-        price: "21336",
-        number_of_rooms: 4,
+        price: "71336",
+        number_of_rooms: 7,
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -76,9 +76,9 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 3,
-        price: "21336",
-        number_of_rooms: 4,
-        number_of_bath: 3,
+        price: "51336",
+        number_of_rooms: 5,
+        number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
@@ -94,9 +94,9 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 1,
-        price: "21336",
-        number_of_rooms: 4,
-        number_of_bath: 3,
+        price: "31336",
+        number_of_rooms: 2,
+        number_of_bath: 6,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
@@ -112,15 +112,15 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "21336",
-        number_of_rooms: 4,
+        price: "51336",
+        number_of_rooms: 8,
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'land',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -130,15 +130,15 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 8,
-        price: "21336",
-        number_of_rooms: 4,
-        number_of_bath: 3,
+        price: "81336",
+        number_of_rooms: 6,
+        number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'removed',
-        property_type: 'condo',
+        property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -156,7 +156,7 @@ let apartments = [
         for_rent: true, //not exsist in db (sale status)
         for_sale: false, //not exsist in db (sale status)
         availability: 'suspended',
-        property_type: 'condo',
+        property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -220,8 +220,8 @@ let apartments = [
         userId: 1,
         address: '330 3rd Ave',
         cityId: 1,
-        price: "21336",
-        number_of_rooms: 4,
+        price: "71336",
+        number_of_rooms: 6,
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
@@ -238,7 +238,7 @@ let apartments = [
         userId: 7,
         address: '330 3rd Ave',
         cityId: 3,
-        price: "21336",
+        price: "41336",
         number_of_rooms: 4,
         number_of_bath: 3,
         sqft: 7500,
@@ -246,7 +246,7 @@ let apartments = [
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'house',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -256,15 +256,15 @@ let apartments = [
         userId: 8,
         address: '330 3rd Ave',
         cityId: 1,
-        price: "21336",
-        number_of_rooms: 4,
-        number_of_bath: 3,
+        price: "51336",
+        number_of_rooms: 3,
+        number_of_bath: 1,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'land',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -274,8 +274,8 @@ let apartments = [
         userId: 9,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "21336",
-        number_of_rooms: 4,
+        price: "11336",
+        number_of_rooms: 6,
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
@@ -291,7 +291,7 @@ let apartments = [
         userId: 9,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "21336",
+        price: "34336",
         number_of_rooms: 4,
         number_of_bath: 3,
         sqft: 7500,
@@ -299,7 +299,7 @@ let apartments = [
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -309,7 +309,7 @@ let apartments = [
         userId: 4,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "34336",
+        price: "54336",
         number_of_rooms: 2,
         number_of_bath: 1,
         sqft: 500,
@@ -317,7 +317,7 @@ let apartments = [
         for_rent: true, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'house',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_2.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -327,15 +327,15 @@ let apartments = [
         userId: 7,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "21336",
-        number_of_rooms: 4,
-        number_of_bath: 3,
+        price: "31336",
+        number_of_rooms: 5,
+        number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'house',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
@@ -345,15 +345,15 @@ let apartments = [
         userId: 5,
         address: '330 3rd Ave',
         cityId: 2,
-        price: "21336",
-        number_of_rooms: 4,
+        price: "65436",
+        number_of_rooms: 2,
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
         for_rent: false, //not exsist in db (sale status)
         for_sale: true, //not exsist in db (sale status)
         availability: 'available',
-        property_type: 'condo',
+        property_type: 'land',
         description: 'My apartment description', //not exsist in db
         main_image: "images/apartment/apartment_1.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]

@@ -14,8 +14,6 @@ class Dropdown extends React.Component {
                         <BsChevronUp className='iconDropButton' /> :
                         <BsChevronDown className='iconDropButton' />
                     }
-
-                    <i className={`iconDropButton chevron-down-icon fa fa-chevron-${isOpen ? 'up' : 'down'}`}/>
                 </button>
 
                 {isOpen && <OpenDropdown title={title} content={content} />}
