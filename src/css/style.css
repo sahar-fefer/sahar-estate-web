@@ -1,3 +1,4 @@
+/* /////////////////////////    card    /////////////////////////// */
 body {
   color: #333;
   outline: none !important;
@@ -34,6 +35,7 @@ body {
     body .bottom-line:hover {
       border-bottom: 3px solid #00d99d; }
 
+/* /////////////////////////    card    /////////////////////////// */
 #header ul {
   margin: 0; }
   #header ul li {
@@ -88,7 +90,7 @@ body {
     border: none;
     outline: none; }
     #header .sign .modal .sign-type-wrapper .sign-type.chosen {
-      background: #00d99d; }
+      background: #00ffb7; }
 
 #header .sign .modal .modal-body .input {
   border: none;
@@ -104,10 +106,11 @@ body {
   height: 2.5rem;
   padding: .4rem;
   border-radius: 50%;
-  background-color: #00d99d;
+  background-color: #00ffb7;
   border: 1px solid #00d99d;
   cursor: pointer; }
 
+/* /////////////////////////    card    /////////////////////////// */
 #footer {
   background-color: #333;
   padding: 10px; }
@@ -223,7 +226,7 @@ body {
         transition: all .2s ease-in-out;
         outline: none; }
         #search .content-wrapper .search-form .submit:hover {
-          background-color: #02ad7e; }
+          background-color: #01be89; }
 
 #info-line {
   padding: 20px 30px;
@@ -270,3 +273,198 @@ body {
       #info-line .numbers .section .description {
         color: gray;
         text-decoration: none; }
+
+/* /////////////////////////    card    /////////////////////////// */
+#gallery .apartmentCard {
+  padding-top: 7px;
+  padding-bottom: 7px; }
+  #gallery .apartmentCard a {
+    text-decoration: none;
+    color: #333333; }
+
+#gallery .wrapperCard {
+  border-radius: .25rem;
+  -webkit-box-shadow: 0 2px 15px 2px #a8a8a8;
+  box-shadow: 0 2px 15px 2px #a8a8a8; }
+
+#gallery .wrapperCard:hover {
+  -webkit-box-shadow: 0 2px 15px -2px #a8a8a8;
+  box-shadow: 0 2px 15px -2px #a8a8a8; }
+
+#gallery .imageWrapper {
+  position: relative;
+  border-top-right-radius: .25rem;
+  border-top-left-radius: .25rem; }
+
+#gallery .status {
+  background-color: #088620;
+  color: white;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 2px 5px; }
+
+#gallery .price {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  margin: 0; }
+
+#gallery .heart {
+  position: absolute;
+  right: 16px; }
+
+#gallery .heart path:hover {
+  fill: rgba(225, 0, 0, 0.5); }
+
+#gallery .city {
+  margin-left: 15px; }
+
+#gallery .infoWrapper {
+  height: 75px; }
+
+#loadBtn {
+  margin: 10px; }
+
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+#searchNav {
+  margin-top: 10px; }
+  #searchNav .inputSearchStyle {
+    padding: .375rem .75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: none;
+    outline: none;
+    position: relative; }
+  #searchNav .pill-button {
+    position: absolute;
+    top: 125px;
+    right: 45px;
+    border-radius: 50rem; }
+  #searchNav .pill-buttons {
+    border: 1px solid #333;
+    padding: 5px 20px; }
+  #searchNav .button-list {
+    background-color: #333;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white; }
+  #searchNav .button-map {
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; }
+  #searchNav .buttonStyle {
+    padding: .375rem .75rem;
+    color: #333;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #9f9f9f;
+    border-radius: .25rem;
+    margin: 2.5px 5px;
+    position: relative;
+    outline: none;
+    -webkit-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s; }
+    #searchNav .buttonStyle:hover {
+      background-color: #f7f5f5; }
+  #searchNav .cities {
+    width: 221px; }
+  #searchNav .submitBtn {
+    background-color: #00d99d;
+    border-color: #00d99d;
+    color: #fff;
+    margin-left: 0; }
+    #searchNav .submitBtn:hover {
+      background-color: #00ffb7; }
+  #searchNav .iconDropButton {
+    font-weight: lighter;
+    font-size: small;
+    margin-left: 5px; }
+  #searchNav .chevron-down-icon {
+    font-size: 10px;
+    margin-left: 8px; }
+  #searchNav .openDropdown {
+    position: absolute;
+    top: auto;
+    left: auto;
+    z-index: 99;
+    float: left;
+    min-width: 10rem;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    list-style: none;
+    background-clip: padding-box;
+    border: 1px solid #333;
+    border-radius: .25rem;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: white; }
+    #searchNav .openDropdown .titleOpenDropdown {
+      background-color: #f7f5f5;
+      color: #333;
+      font-weight: bold;
+      padding: 5px; }
+    #searchNav .openDropdown .contentOpenDropdown .wrapper {
+      margin: 10px;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    #searchNav .openDropdown .contentOpenDropdown .buttonInputStyle {
+      padding: .375rem .75rem;
+      color: #333;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #9f9f9f;
+      border-radius: .25rem;
+      margin: 0 5px; }
+    #searchNav .openDropdown .contentOpenDropdown .inputInsidePrice {
+      padding-left: 4px;
+      border: none;
+      width: 90%;
+      outline: none; }
+    #searchNav .openDropdown .contentOpenDropdown .inputPrice {
+      width: 150px; }
+    #searchNav .openDropdown .contentOpenDropdown .bigPriceList {
+      list-style: none;
+      padding: inherit; }
+      #searchNav .openDropdown .contentOpenDropdown .bigPriceList li {
+        color: #333;
+        padding: 4px;
+        cursor: context-menu; }
+        #searchNav .openDropdown .contentOpenDropdown .bigPriceList li:hover {
+          color: #00d99d; }
+    #searchNav .openDropdown .contentOpenDropdown .chosenCircle {
+      width: 50px;
+      height: 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #searchNav .openDropdown .contentOpenDropdown .chosenCircle:hover {
+        border: 1px solid #00d99d;
+        border-radius: 50%;
+        color: #00d99d; }

@@ -11,7 +11,7 @@
   }
 
   .wrapperCard {
-    border-radius: $border-radius;
+    border-radius: .25rem;
     box-shadow: $shadow-card-hover;
   }
 
@@ -21,8 +21,8 @@
 
   .imageWrapper {
     position: relative;
-    border-top-right-radius: $border-radius;
-    border-top-left-radius: $border-radius;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
   }
 
   .status {
@@ -74,4 +74,162 @@
 
 .hide {
   display: none !important;
+}
+
+#searchNav {
+  margin-top: 10px;
+  .inputSearchStyle {
+    padding: .375rem .75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: none;
+    outline: none;
+    position: relative;
+  }
+
+  .pill-button {
+    position: absolute;
+    top: 125px;
+    right: 45px;
+    border-radius: 50rem;
+  }
+
+  .pill-buttons {
+    border: 1px solid #333;
+    padding: 5px 20px;
+  }
+
+  .button-list {
+    background-color: #333;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white;
+  }
+
+  .button-map {
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .buttonStyle {
+    padding: .375rem .75rem;
+    color: $text;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid $text_light;
+    border-radius: .25rem;
+    margin: 2.5px 5px;
+    position: relative;
+    outline: none;
+    transition: background-color .3s;
+    &:hover {
+      background-color: $light;
+    }
+  }
+
+  .cities {
+    width: 221px;
+  }
+
+  .submitBtn {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+    margin-left: 0; 
+    &:hover {
+      background-color: $primary_light;
+    }
+  }
+
+  .iconDropButton {
+    font-weight: lighter;
+    font-size: small;
+    margin-left: 5px;
+  }
+
+  .chevron-down-icon {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+
+  .openDropdown {
+    position: absolute;
+    top: auto;
+    left: auto;
+    z-index: 99;
+    float: left;
+    min-width: 10rem;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    list-style: none;
+    background-clip: padding-box;
+    border: 1px solid $text;
+    border-radius: .25rem;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: white;
+
+    .titleOpenDropdown {
+      background-color: $light;
+      color: $text;
+      font-weight: bold;
+      padding: 5px;
+    }
+    .contentOpenDropdown {
+      .wrapper {
+        margin: 10px;
+        justify-content: space-between;
+      }
+      .buttonInputStyle {
+        padding: .375rem .75rem;
+        color: $text;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid $text_light;
+        border-radius: .25rem;
+        margin: 0 5px;
+      }
+      .inputInsidePrice {
+        padding-left: 4px;
+        border: none;
+        width: 90%;
+        outline: none;
+      }
+      .inputPrice {
+        width: 150px;
+      }
+      .bigPriceList {
+        list-style: none;
+        padding: inherit;
+        li {
+          color: $text;
+          padding: 4px;
+          cursor: context-menu; 
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+      .chosenCircle {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          border: 1px solid $primary;
+          border-radius: 50%;
+          color: $primary;
+        }
+      }
+    }
+  }
 }
