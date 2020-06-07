@@ -9,6 +9,7 @@ import {
 import Header from './components/header/header';
 import Home from './components/home/home';
 import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
+import singleApartment from './components/singleApartment/singleApartment';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/gallery">
             <GalleryAndFilter />
           </Route>
+          <Route path="/apartment/:id" component={singleApartment} />
           <Route path="/">
             <Home
               type={'home'}

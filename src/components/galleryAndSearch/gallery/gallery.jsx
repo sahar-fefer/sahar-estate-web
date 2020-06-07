@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./card/card";
+import { Link } from "react-router-dom";
 
 const Gallery = ({ items }) => {
     return (
@@ -9,7 +10,9 @@ const Gallery = ({ items }) => {
             <div className={"row"}>
                 {items ? items.map((item, i) => {
                     return (
-                        <Card data={item} key={i} />
+                        // <Link to={`apartment/${item.id}`}>
+                            <Card data={item} key={i} />
+                        // </Link>
                     )
                 }) :
                     <p>No apartments match for this search</p>
