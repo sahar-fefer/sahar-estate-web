@@ -1,25 +1,25 @@
 import React from 'react';
 
-function ApartmentDetails(props) {
-    const {apartmentData} = props;
+const ApartmentDetails = ({ apartmentData }) => {
+    const { price, number_of_bath, number_of_rooms, sqft, address } = apartmentData;
     return (
-        <div className={"apartmentDetails"}>
-            <h3 style={{fontWeight: "bold"}}>{apartmentData.price}</h3>
+        <div className={"apartmentDetails col-auto"}>
+            <h3 style={{ fontWeight: "bold" }}>{price && `$${price}`}</h3>
             <div className={"row"}>
                 <div
-                    className={"col-auto numBeds"}>{apartmentData.number_of_beds && `${apartmentData.number_of_beds} beds`}</div>
+                    className={"col-auto numBath"}>{number_of_bath && `${number_of_bath} Bath`}</div>
                 <div
-                    className={"col-auto numRooms"}>{apartmentData.number_of_rooms && `${apartmentData.number_of_rooms} rooms`}</div>
+                    className={"col-auto numRooms"}>{number_of_rooms && `${number_of_rooms} Rooms`}</div>
                 <div
-                    className={"col-auto sqft"}>{apartmentData.sqft && `${apartmentData.sqft} sqft`}</div>
+                    className={"col-auto sqft"}>{sqft && `${sqft} Sqft`}</div>
             </div>
             <div className={"row"}>
                 <div
-                    className={"col-auto"}>{apartmentData.address && apartmentData.address}
+                    className={"col-auto"}>{address && address}
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default ApartmentDetails;

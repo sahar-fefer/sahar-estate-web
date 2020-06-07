@@ -7,21 +7,22 @@ import ApartmentDetails from "./apartmentDetails";
 import ApartmentMap from "./apartmentMap";
 
 import { apartments } from '../../app-data/apartment-data';
+import Footer from '../footer/footer';
 
 const SingleApartment = () => {
     const { id } = useParams();
     const apartmentData = apartments.find(apartment => parseInt(apartment.id) === parseInt(id));
     const apartmentImages = apartmentData.images;
-    // console.log('apartmentData', apartmentData);
-    console.log('apartmentData', apartmentData.images);
     return (
         <div id={"apartment"}>
             <div className={"container"}>
-                <h1>{apartmentData.title}</h1>
                 <Carousel apartmentData={apartmentData} apartmentImages={apartmentImages} />
-                <ApartmentDetails apartmentData={apartmentData} />
-                <ApartmentMap />
+                <div className={'row'}>
+                    <ApartmentDetails apartmentData={apartmentData} />
+                    <ApartmentMap />
+                </div>
             </div>
+            <Footer />
         </div>
     );
 };

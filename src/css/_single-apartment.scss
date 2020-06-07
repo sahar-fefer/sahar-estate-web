@@ -2,16 +2,12 @@
 
 #apartment {
   margin-top: 2rem;
-  .apartmentDetails {
-    margin-right: 200px;
-    border-radius: 4px;
-  }
 
   .nextPrevApartmentPointer {
     padding: 16px 8px;
     color: white;
     font-weight: bold;
-    transition: all .4s;
+    transition: all 0.4s;
   }
 
   .nextPrevApartmentPointer:hover {
@@ -19,107 +15,88 @@
   }
 }
 
+//////////////////////    APARTMENT FORM    //////////////////////
+
+#apartment-form {
+  background-color: $text-light;
+  width: 27%;
+  border-radius: 8px;
+  padding: 15px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  .title-form {
+    font-size: 1.2rem;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+    min-height: 2rem;
+    padding: 0.25rem;
+
+    .input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .submit {
+    background-color: $secondary;
+    color: #ededed;
+    border: none;
+    justify-content: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $secondary_hover;
+    }
+  }
+}
+
 //////////////////////    APARTMENT CAROUSEL AND FORM    //////////////////////
 
-#carouselAndFormWrapper {
+#carousel-and-form-wrapper {
+  background-color: honeydew;
   margin: 2rem 0;
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
 
-  //////////////////////    APARTMENT FORM    //////////////////////
+//////////////////////    APARTMENT CAROUSEL    //////////////////////
 
-  #apartment-form {
-    background-color: #a8a8a8;
-    width: 27%;
-    border-radius: 8px;
-    padding: 15px;
+#carousel-example-interval {
+  width: 100%;
 
-    .title-form {
-      font-size: 1.20rem;
-    }
-
-    .input-wrapper {
-      display: flex;
-      background-color: white;
-      width: 100%;
-      margin: 5px 0;
-      border-radius: 4px;
-      min-height: 2rem;
-
-      i {
-        height: auto;
-        padding: 5px;
-        font-size: 1.4rem;
-      }
-    }
-
-    .input {
-      background-color: transparent;
-      border: none;
-    }
-
-    .submit {
-      background-color: darkred;
-      color: #ededed;
-      border: none;
-      justify-content: center;
-    }
-
-    .checkbox-wrapper {
-      margin-right: auto;
-
-      .checkbox {
-        margin-right: 12px;
-      }
-
-      .label {
-        margin: 0;
-      }
-    }
-
-    .policity {
-      font-size: .7rem;
-
-      .toggle-more {
-        color: #666666;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
+  .carousel-inner {
+    height: 60vh;
   }
 
-  //////////////////////    APARTMENT CAROUSEL    //////////////////////
-
-  #carouselExampleInterval {
+  .responsive-carousel {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
     width: 100%;
-
-    .carousel-inner {
-      height: 60vh;
-    }
-
-    .responsive-carousel {
-      overflow: hidden;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      width: 100%;
-    }
   }
-  @media (min-width: 992px) {
-    #carouselExampleInterval {
-      width: 70%;
-    }
+}
+@media (min-width: 992px) {
+  #carousel-example-interval {
+    width: 70%;
   }
 }
 
-//////////////////////    APARTMENT MAP    //////////////////////
-
-#map-apartment {
+//////////////////////    MAP    //////////////////////
+.map-apartment {
   height: 17rem;
   padding: 0;
   margin-bottom: 1rem;
@@ -141,7 +118,7 @@
 }
 
 @media (min-width: 576px) {
-  #map-apartment {
+  .map-apartment {
     .map-container {
       width: 60%;
       margin-left: auto;

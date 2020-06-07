@@ -49,3 +49,15 @@ class NextOrPrevApartment extends React.Component {
 }
 
 export default NextOrPrevApartment;
+
+// import React from 'react';
+
+// const NextOrPrevApartment = () => {
+//     return (
+//         <div>
+            
+//         </div>
+//     );
+// };
+
+// export default NextOrPrevApartment;
