@@ -1,0 +1,127 @@
+//////////////////////    APARTMENT    //////////////////////
+
+#apartment {
+  margin-top: 2rem;
+
+  .nextPrevApartmentPointer {
+    padding: 16px 8px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.4s;
+  }
+
+  .nextPrevApartmentPointer:hover {
+    padding: 40px 60px;
+  }
+}
+
+//////////////////////    APARTMENT FORM    //////////////////////
+
+#apartment-form {
+  background-color: $text-light;
+  width: 27%;
+  border-radius: 8px;
+  padding: 15px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  .title-form {
+    font-size: 1.2rem;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+    min-height: 2rem;
+    padding: 0.25rem;
+
+    .input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .submit {
+    background-color: $secondary;
+    color: #ededed;
+    border: none;
+    justify-content: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $secondary_hover;
+    }
+  }
+}
+
+//////////////////////    APARTMENT CAROUSEL AND FORM    //////////////////////
+
+#carousel-and-form-wrapper {
+  background-color: honeydew;
+  margin: 2rem 0;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//////////////////////    APARTMENT CAROUSEL    //////////////////////
+
+#carousel-example-interval {
+  width: 100%;
+
+  .carousel-inner {
+    height: 60vh;
+  }
+
+  .responsive-carousel {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  #carousel-example-interval {
+    width: 70%;
+  }
+}
+
+//////////////////////    MAP    //////////////////////
+.map-apartment {
+  height: 17rem;
+  padding: 0;
+  margin-bottom: 1rem;
+
+  .map-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .map-container iframe {
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+@media (min-width: 576px) {
+  .map-apartment {
+    .map-container {
+      width: 60%;
+      margin-left: auto;
+    }
+  }
+}

@@ -468,3 +468,108 @@ body {
         border: 1px solid #00d99d;
         border-radius: 50%;
         color: #00d99d; }
+
+#apartment {
+  margin-top: 2rem; }
+  #apartment .nextPrevApartmentPointer {
+    padding: 16px 8px;
+    color: white;
+    font-weight: bold;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
+  #apartment .nextPrevApartmentPointer:hover {
+    padding: 40px 60px; }
+
+#apartment-form {
+  background-color: #9f9f9f;
+  width: 27%;
+  border-radius: 8px;
+  padding: 15px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto; }
+  #apartment-form .title-form {
+    font-size: 1.2rem; }
+  #apartment-form .input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+    min-height: 2rem;
+    padding: 0.25rem; }
+    #apartment-form .input-wrapper .input {
+      background-color: transparent;
+      border: none;
+      outline: none; }
+  #apartment-form .submit {
+    background-color: #910667;
+    color: #ededed;
+    border: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    #apartment-form .submit:hover {
+      background-color: #790556; }
+
+#carousel-and-form-wrapper {
+  background-color: honeydew;
+  margin: 2rem 0;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+#carousel-example-interval {
+  width: 100%; }
+  #carousel-example-interval .carousel-inner {
+    height: 60vh; }
+  #carousel-example-interval .responsive-carousel {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 100%; }
+
+@media (min-width: 992px) {
+  #carousel-example-interval {
+    width: 70%; } }
+
+.map-apartment {
+  height: 17rem;
+  padding: 0;
+  margin-bottom: 1rem; }
+  .map-apartment .map-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%; }
+  .map-apartment .map-container iframe {
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+
+@media (min-width: 576px) {
+  .map-apartment .map-container {
+    width: 60%;
+    margin-left: auto; } }
