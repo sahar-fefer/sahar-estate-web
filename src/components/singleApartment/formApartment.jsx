@@ -18,9 +18,7 @@ const FormApartment = ({ apartmentData }) => {
                     <FiPhone className={'icon'} />
                     <input className={"input"} />
                 </div>
-                <textarea className={"input-wrapper"}>
-                    {`I am interested in ${apartmentData.address}`}
-                </textarea>
+                <textarea className={"input-wrapper"} defaultValue={`I am interested in ${apartmentData.address}`} />
                 <input className={"input-wrapper submit"} type={"submit"} value={'Send'} />
             </form>
         </div>

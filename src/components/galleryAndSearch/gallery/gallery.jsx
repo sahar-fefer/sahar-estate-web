@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./card/card";
-import { Link } from "react-router-dom";
 
 const Gallery = ({ items }) => {
     return (

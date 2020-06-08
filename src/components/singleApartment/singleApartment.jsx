@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, withRouter } from 'react-router-dom';
 
 import Carousel from "./carousel";
@@ -12,6 +12,7 @@ import NextOrPrevApartment from './nextOrPrevApartment';
 const searchPrevApartment = (curId) => {
     let prevId = parseInt(curId);
     let prev = {};
+    
     for (let i = 0; i < apartments.length; i++) {
         if (--prevId >= 0) {
             prev = apartments.find(apartment => parseInt(apartment.id) === prevId);

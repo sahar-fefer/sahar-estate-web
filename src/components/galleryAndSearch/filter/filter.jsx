@@ -3,7 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 
 import Dropdown from "./dropdowns/dropdown";
 import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
-import BedsOrRooms from "./dropdowns/searchContent/bedsOrRooms";
+import BathOrRooms from "./dropdowns/searchContent/bathOrRooms";
 
 const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
     const [activeDropdown, setActiveDropdown] = useState(-1);
@@ -13,21 +13,21 @@ const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, m
             title: "Price Range",
             content: <LargePriceContent handleInputChange={handleInputChange} minPrice={minPrice} maxPrice={maxPrice} />
         },
-        bedsDrop: {
+        bathDrop: {
             btnName: "Bath",
             title: "Bathrooms",
-            content: <BedsOrRooms handleInputChange={handleInputChange} minBath={minBath} maxBath={maxBath} type={'Bath'} />
+            content: <BathOrRooms handleInputChange={handleInputChange} minBath={minBath} maxBath={maxBath} type={'Bath'} />
         },
         roomsDrop: {
             btnName: "Rooms",
             title: "Rooms",
-            content: <BedsOrRooms handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} type={'Rooms'} />
+            content: <BathOrRooms handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} type={'Rooms'} />
         }
     }
 
     const property_types = ['apartment', 'condo', 'land', 'house', 'ranch'];
 
-    const { priceDrop, bedsDrop, roomsDrop } = dropdownsData;
+    const { priceDrop, bathDrop, roomsDrop } = dropdownsData;
 
     const toggleDropdownItems = (e, index) => {
         e.preventDefault();
@@ -41,23 +41,23 @@ const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, m
                     <option value={""} disabled selected hidden>Cities</option>
                     {
                         cities.length &&
-                        cities.map(city => (
-                            <option value={city.id}>{city.name}</option>
+                        cities.map((city, key) => (
+                            <option value={city.id} key={key}>{city.name}</option>
                         ))
                     }
                 </select>
                 <select className={"buttonStyle cities col-3 d-none d-md-block"} name="property_type" onClick={handleInputChange}>
                     <option value={""} disabled selected hidden>Property Type</option>
                     {
-                        property_types.map(property_type => (
-                            <option value={property_type}>{property_type}</option>
+                        property_types.map((property_type, key) => (
+                            <option value={property_type} key={key}>{property_type}</option>
                         ))
                     }
                 </select>
                 <Dropdown isOpen={activeDropdown === 1} toggleDropdown={(e) => toggleDropdownItems(e, 1)}
                     btnName={priceDrop.btnName} title={priceDrop.title} content={priceDrop.content} />
                 <Dropdown isOpen={activeDropdown === 2} toggleDropdown={(e) => toggleDropdownItems(e, 2)}
-                    btnName={bedsDrop.btnName} title={bedsDrop.title} content={bedsDrop.content} />
+                    btnName={bathDrop.btnName} title={bathDrop.title} content={bathDrop.content} />
                 <Dropdown isOpen={activeDropdown === 3} toggleDropdown={(e) => toggleDropdownItems(e, 3)}
                     btnName={roomsDrop.btnName} title={roomsDrop.title} content={roomsDrop.content} />
                 <button className="submitBtn buttonStyle search-button" onClick={handleSubmit}>
