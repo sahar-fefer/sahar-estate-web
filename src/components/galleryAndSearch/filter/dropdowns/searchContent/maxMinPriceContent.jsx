@@ -1,5 +1,4 @@
 import React from "react";
-import OpenDropdown from "../openDropdown";
 
 class MaxMinPriceContent extends React.Component {
     constructor(props) {

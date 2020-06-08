@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 // import { getCountries, getCountriesWithApartments, getCitiesOfCountry } from '../../api/countries-cities';
 // import { getApartments, getApartmentsByCountry, getApartmentsByCountryAndSaleStatus, getApartmentsByCountryOrAndSaleStatus } from '../../api/apartments';
 
-import ClineFilter from './filter/clineFilter';
 import Gallery from './gallery/gallery';
 
 import { apartments } from '../../app-data/apartment-data';
@@ -35,16 +34,11 @@ const GalleryAndFilter = () => {
 
     const handleInputChange = (e) => {
         dispatch({ field: e.target.name, value: e.target.value })
-        console.log('filterBy', filterBy);
-        // console.log('e.target.name', e.target.name);
-        // console.log('e.target.value', e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('filterBy', filterBy);
         setFilteredApartments(updateGalleryItems());
-        // console.log('filteredApartments', filteredApartments);
     };
 
     const updateGalleryItems = () => {
@@ -74,7 +68,6 @@ const GalleryAndFilter = () => {
         if (maxRooms) {
             updated = updated.filter(apartment => apartment.number_of_rooms <= parseInt(maxRooms));
         }
-        console.log('updated', updated);
         return updated;
     };
 
