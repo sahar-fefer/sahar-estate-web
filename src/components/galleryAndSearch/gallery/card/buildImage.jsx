@@ -3,7 +3,7 @@ import React from 'react';
 
 const BuildImage = ({ currentCard }) => {
     const mainImage = currentCard.main_image;
-    const templateImage = `/images/apartments/template`;
+    const templateImage = `./images/apartment/apartmentTemplate.png`;
     // const [isLoading, setIsLoading] = useState(true);
 
     const imageStyle = {

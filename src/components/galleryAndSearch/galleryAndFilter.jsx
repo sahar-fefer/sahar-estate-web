@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
 
 // import { getCountries, getCountriesWithApartments, getCitiesOfCountry } from '../../api/countries-cities';
 // import { getApartments, getApartmentsByCountry, getApartmentsByCountryAndSaleStatus, getApartmentsByCountryOrAndSaleStatus } from '../../api/apartments';
@@ -17,8 +17,7 @@ const initialFilter = {
     maxBath: '',
     minRooms: '',
     maxRooms: '',
-    property_type: '',
-    city_id: ''
+    property_type: ''
 };
 
 const filterReducer = (state, { field, value }) => {
@@ -31,7 +30,10 @@ const filterReducer = (state, { field, value }) => {
 const GalleryAndFilter = () => {
     const [filterBy, dispatch] = useReducer(filterReducer, initialFilter);
     const [filteredApartments, setFilteredApartments] = useState(apartments);
+    const location = useLocation();
 
+    const { selectedCityId, selectedCityName, saleStatus } = location.state;
+    console.log('selectedCityId', selectedCityId);
     const handleInputChange = (e) => {
         dispatch({ field: e.target.name, value: e.target.value })
     };
@@ -42,11 +44,14 @@ const GalleryAndFilter = () => {
     };
 
     const updateGalleryItems = () => {
-        const { city_id, property_type, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
+        const { property_type, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
         let updated = apartments;
-        if (city_id) {
-            updated = updated.filter(apartment => apartment.cityId === parseInt(city_id));
+        if (selectedCityId) {
+            updated = updated.filter(apartment => apartment.cityId === parseInt(selectedCityId));
         }
+        // if (SaleStatus) {
+        //     updated = updated.filter(apartment => apartment.for_rent === SaleStatus);
+        // }
         if (property_type) {
             updated = updated.filter(apartment => apartment.property_type === property_type);
         }
@@ -74,26 +79,12 @@ const GalleryAndFilter = () => {
     const { minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms, city } = filterBy;
     return (
         <div className={"container-fluid"}>
-            {/* <ClineFilter
-                cities={cities}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-                minPrice={minPrice}
-                maxPrice={maxPrice}
-                minBath={minBath}
-                maxBath={maxBath}
-                minRooms={minRooms}
-                maxRooms={maxRooms}
-                city={city} /> */}
-            {/* <Filter handleInputChange={handleInputChange} handleSubmit={handleSubmit}
-                selectCountry={selectCountry} selectCity={selectCity}
-                selectedCountry={state.selectedCountry} selectedCountryName={state.selectedCountryName} selectedCity={state.selectedCity}
-                minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} maxBeds={maxBeds} minRooms={minRooms} maxRooms={maxRooms}
-                resetFilters={resetFilters} countries={state.countries} cities={state.cities} /> */}
             <Filter
                 cities={cities}
                 handleInputChange={handleInputChange}
                 handleSubmit={handleSubmit}
+                selectedCityId={selectedCityId} 
+                selectedCityName={selectedCityName}
                 minPrice={minPrice}
                 maxPrice={maxPrice}
                 minBath={minBath}

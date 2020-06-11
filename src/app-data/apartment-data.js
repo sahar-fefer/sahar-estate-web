@@ -319,7 +319,7 @@ let apartments = [
         availability: 'available',
         property_type: 'house',
         description: 'My apartment description', //not exsist in db
-        main_image: "images/apartment/apartment_2.jpg",
+        // main_image: "images/apartment/apartment_2.jpg",
         images: ["images/apartment/apartment_1.jpg", "images/apartment/apartment_2.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_4.jpg", "images/apartment/apartment_5.jpg"]
     },
     {

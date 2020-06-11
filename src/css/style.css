@@ -34,6 +34,8 @@ body {
     transition: all .2s ease-in-out; }
     body .bottom-line:hover {
       border-bottom: 3px solid #00d99d; }
+  body .bottom-line-chosed {
+    border-bottom: 3px solid #01be89 !important; }
 
 /* /////////////////////////    card    /////////////////////////// */
 #header ul {
@@ -41,7 +43,10 @@ body {
   #header ul li {
     padding: 0; }
 
-#header .logo, #header ul, #header .burger-button, #header .icon {
+#header .logo,
+#header ul,
+#header .burger-button,
+#header .icon {
   padding: 10px; }
 
 #header .options .burger-button {
@@ -60,13 +65,22 @@ body {
   margin-right: 25px;
   text-align: left; }
 
-#header .logo {
+#header .logo-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #header .logo-wrapper .border-logo {
+    background-color: #f7f5f5;
+    border-radius: 4px; }
+    #header .logo-wrapper .border-logo .logo {
+      padding-left: 4px;
+      padding-right: 4px;
+      font-family: "Crimson Text";
+      font-size: x-large;
+      color: #00d99d; }
 
 #header .sign .header-option-wrapper {
   -webkit-box-pack: end;
@@ -104,7 +118,7 @@ body {
 #header .sign .modal .modal-body .send {
   width: 2.5rem;
   height: 2.5rem;
-  padding: .4rem;
+  padding: 0.4rem;
   border-radius: 50%;
   background-color: #00ffb7;
   border: 1px solid #00d99d;
@@ -164,8 +178,8 @@ body {
       color: #BD081C; }
     #footer .icons-wrapper .linkedin:hover {
       color: #2867B2; }
-    #footer .icons-wrapper .twitter:hover {
-      color: #38A1F3; }
+    #footer .icons-wrapper .github:hover {
+      color: black; }
     #footer .icons-wrapper .facebook:hover {
       color: #4267b2; }
 
@@ -188,8 +202,6 @@ body {
       padding-left: .5rem; }
       #search .content-wrapper .sale-options-wrapper .sale-options {
         font-weight: bold; }
-        #search .content-wrapper .sale-options-wrapper .sale-options a {
-          color: white; }
     #search .content-wrapper .search-form {
       width: 100%;
       height: 55px;

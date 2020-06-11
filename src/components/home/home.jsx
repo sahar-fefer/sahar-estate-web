@@ -12,7 +12,6 @@ const Home = ({type, title, description}) => {
     return (
         <div id="home">
             <HomeSearch title={title} description={description} />
-            {/* <LineGallery/> */}
             <InfoLine info={info}/>
             <Footer/>
         </div>
