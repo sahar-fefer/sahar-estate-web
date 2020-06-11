@@ -6,8 +6,8 @@ import { withRouter, useLocation } from 'react-router-dom';
 
 import Gallery from './gallery/gallery';
 
-// import { apartments } from '../../app-data/apartment-data';
-// import { cities } from '../../app-data/cities-data';
+import { apartments } from '../../app-data/apartment-data';
+import { cities } from '../../app-data/cities-data';
 import Filter from './filter/filter';
 
 const initialFilter = {
@@ -17,13 +17,13 @@ const initialFilter = {
     maxBath: '',
     minRooms: '',
     maxRooms: '',
-    property_type: ''
+    propertyType: ''
 };
 
 const filterReducer = (state, { field, value }) => {
     return {
         ...state,
-        [field]: value
+        [field]: value 
     }
 }
 
@@ -32,17 +32,10 @@ const GalleryAndFilter = () => {
     const [filteredApartments, setFilteredApartments] = useState([]);
     const location = useLocation();
 
-    const { selectedCityId,
-        saleStatus,
-        cities,
-        apartments } = location.state;
+    const { selectedCityId, saleStatus } = location.state;
 
     useEffect(() => {
-        if (location.state.selectedCityId) {
-            setFilteredApartments(apartments.filter(apartment => apartment.cityId === parseInt(location.state.selectedCityId)))
-        } else {
-            setFilteredApartments(apartments)
-        }
+        setFilteredApartments(updateGalleryItems())
     }, [location]);
 
     const handleInputChange = (e) => {
@@ -55,16 +48,16 @@ const GalleryAndFilter = () => {
     };
 
     const updateGalleryItems = () => {
-        const { property_type, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
+        const { propertyType, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms } = filterBy;
         let updated = apartments;
         if (selectedCityId) {
             updated = updated.filter(apartment => apartment.cityId === parseInt(selectedCityId));
         }
-        // if (SaleStatus) {
-        //     updated = updated.filter(apartment => apartment.for_rent === SaleStatus);
-        // }
-        if (property_type) {
-            updated = updated.filter(apartment => apartment.property_type === property_type);
+        if (saleStatus) {
+            updated = updated.filter(apartment => apartment.sale_status === saleStatus);
+        }
+        if (propertyType) {
+            updated = updated.filter(apartment => apartment.property_type === propertyType);
         }
         if (minPrice) {
             updated = updated.filter(apartment => apartment.price >= parseInt(minPrice));
