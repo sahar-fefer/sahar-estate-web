@@ -6,10 +6,28 @@ const Options = props => {
         <div className={'col options d-none d-sm-flex'}>
             <ul className={'row'}>
                 <li className={'col'}>
-                    <Link to='/rent'>Rent</Link>
+                    <Link
+                        to={{
+                            pathname: "/gallery",
+                            state: {
+                                saleStatus: 'sale',
+                                selectedCityId: ''
+                            }
+                        }}>
+                        Buy
+                      </Link>
                 </li>
                 <li className={'col'}>
-                    <Link to='/buy'>Buy</Link>
+                    <Link
+                        to={{
+                            pathname: "/gallery",
+                            state: {
+                                saleStatus: 'rent',
+                                selectedCityId: ''
+                            }
+                        }}>
+                        Rent
+                      </Link>
                 </li>
             </ul>
         </div>
