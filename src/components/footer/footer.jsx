@@ -9,8 +9,6 @@ import {
     FaPinterest
 } from 'react-icons/fa';
 
-import { FiInstagram } from 'react-icons/fi';
-
 const Footer = props => {
     // const logos = [{ icon: 'FaFacebookSquare', name: 'facebook' },
     // { icon: 'FaTwitterSquare', name: 'twitter' },
