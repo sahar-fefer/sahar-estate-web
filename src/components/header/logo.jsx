@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+// import { big_logo } from '../../../public/images/general/big_logo.png'
 const Logo = () => {
     return (
-        <div className={'col logo-wrapper justify-content-start justify-content-sm-center'}>
-            <Link to='/'>
-                <div className={'border-logo'}>
-                    <span className={'logo'}>
-                        Sahar Estate
-                </span>
-                </div>
-            </Link>
-        </div>
+        <Link to='/' className={'col logo-wrapper justify-content-start justify-content-sm-center'}>
+            <img src="./images/general/big_logo.png" alt="sahar estate logo" className={'big-logo d-none d-sm-block'} />
+            <img src="./images/general/small_logo.png" alt="sahar estate logo" className={'small-logo d-sm-none'} />
+        </Link>
     );
 };
 

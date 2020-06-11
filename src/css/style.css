@@ -63,7 +63,8 @@ body {
 
 #header .options li {
   margin-right: 25px;
-  text-align: left; }
+  text-align: left;
+  outline: none; }
 
 #header .logo-wrapper {
   display: -webkit-box;
@@ -72,15 +73,10 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  #header .logo-wrapper .border-logo {
-    background-color: #f7f5f5;
-    border-radius: 4px; }
-    #header .logo-wrapper .border-logo .logo {
-      padding-left: 4px;
-      padding-right: 4px;
-      font-family: "Crimson Text";
-      font-size: x-large;
-      color: #00d99d; }
+  #header .logo-wrapper .small-logo {
+    height: 30px; }
+  #header .logo-wrapper .big-logo {
+    height: 35px; }
 
 #header .sign .header-option-wrapper {
   -webkit-box-pack: end;

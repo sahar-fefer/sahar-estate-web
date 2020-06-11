@@ -31,6 +31,7 @@
         li {
             margin-right: 25px;
             text-align: left;
+            outline: none;
         }
     }
 
@@ -39,17 +40,11 @@
         display: flex;
         align-items: center;
 
-        .border-logo {
-            background-color: $light;
-            border-radius: 4px;
-
-            .logo {
-                padding-left: 4px;
-                padding-right: 4px;
-                font-family: "Crimson Text";
-                font-size: x-large;
-                color: $primary;
-            }
+        .small-logo {
+            height: 30px;
+        }
+        .big-logo {
+            height: 35px;
         }
     }
 
