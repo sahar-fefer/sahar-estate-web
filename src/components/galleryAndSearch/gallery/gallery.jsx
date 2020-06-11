@@ -9,9 +9,7 @@ const Gallery = ({ items }) => {
             <div className={"row"}>
                 {items ? items.map((item, i) => {
                     return (
-                        // <Link to={`apartment/${item.id}`}>
-                            <Card data={item} key={i} />
-                        // </Link>
+                        <Card data={item} key={i} />
                     )
                 }) :
                     <p>No apartments match for this search</p>

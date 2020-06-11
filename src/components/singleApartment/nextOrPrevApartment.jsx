@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NextOrPrevApartment = ({ apartment, type }) => {
     const [showPrice, setShowPrice] = useState(false);
     return (
-        <Link to={`/apartment/${apartment.id}`}>
+        <Link to={`/apartment/${apartment.id}`} className={'d-none d-sm-block'}>
             <div
                 style={{
                     zIndex: 2,

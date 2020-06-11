@@ -5,7 +5,7 @@ import Dropdown from "./dropdowns/dropdown";
 import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
 import BathOrRooms from "./dropdowns/searchContent/bathOrRooms";
 
-const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
+const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, selectedCityName, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
     const [activeDropdown, setActiveDropdown] = useState(-1);
     const dropdownsData = {
         priceDrop: {
@@ -38,11 +38,12 @@ const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, m
         <div id={"searchNav"}>
             <form className="search-option form-inline">
                 <select className={"buttonStyle cities col-3"} name="city_id" onClick={handleInputChange}>
+
                     <option value={""} disabled selected hidden>Cities</option>
                     {
                         cities.length &&
                         cities.map((city, key) => (
-                            <option value={city.id} key={key}>{city.name}</option>
+                            <option value={city.id} key={key} selected={selectedCityId == city.id}>{city.name}</option>
                         ))
                     }
                 </select>
@@ -64,10 +65,6 @@ const Filter = ({ cities, handleSubmit, handleInputChange, minPrice, maxPrice, m
                     <BsSearch />
                 </button>
             </form>
-            {/* <div className={"pill-button"}>
-                <button className={"button-list pill-buttons"}>List</button>
-                <button className={"button-map pill-buttons"}>Map</button>
-            </div> */}
         </div>
     );
 };

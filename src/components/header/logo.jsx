@@ -1,13 +1,17 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Logo = props => {
+const Logo = () => {
     return (
-    <div className={'col logo'}>
-                    <Link to='/'>
-                        LOGO
-                        </Link>
+        <div className={'col logo-wrapper justify-content-start justify-content-sm-center'}>
+            <Link to='/'>
+                <div className={'border-logo'}>
+                    <span className={'logo'}>
+                        Sahar Estate
+                </span>
                 </div>
+            </Link>
+        </div>
     );
 };
 
