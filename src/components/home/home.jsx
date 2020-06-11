@@ -2,7 +2,6 @@ import React from 'react';
 
 // components
 import HomeSearch from './homeSearch';
-// import LineGallery from './';
 import InfoLine from './infoLine';
 import Footer from '../footer/footer';
 
