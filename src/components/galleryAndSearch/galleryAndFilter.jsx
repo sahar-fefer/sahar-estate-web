@@ -6,8 +6,8 @@ import { withRouter, useLocation } from 'react-router-dom';
 
 import Gallery from './gallery/gallery';
 
-// import { apartments } from '../../app-data/apartment-data';
-// import { cities } from '../../app-data/cities-data';
+import { apartments } from '../../app-data/apartment-data';
+import { cities } from '../../app-data/cities-data';
 import Filter from './filter/filter';
 
 const initialFilter = {
@@ -32,10 +32,7 @@ const GalleryAndFilter = () => {
     const [filteredApartments, setFilteredApartments] = useState([]);
     const location = useLocation();
 
-    const { selectedCityId,
-        saleStatus,
-        cities,
-        apartments } = location.state;
+    const { selectedCityId, saleStatus } = location.state;
 
     useEffect(() => {
         setFilteredApartments(updateGalleryItems())

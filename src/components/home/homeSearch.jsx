@@ -1,25 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cities } from '../../app-data/cities-data';
-import { apartments } from '../../app-data/apartment-data';
 
 import { BsSearch } from 'react-icons/bs';
 
 const HomeSearch = ({ title, description }) => {
     const [selectedCityId, setSelectedCityId] = useState('');
     const [saleStatus, setSaleStatus] = useState('');
-    // const [filteredApartments, setFilteredApartments] = useState(apartments);
 
     const handleSelectCity = (e) => {
         setSelectedCityId(e.target.value);
-        // setFilteredApartments(
-        //     apartments.filter(apartment => apartment.cityId === parseInt(e.target.value))
-        // )
     }
-
-    // console.log('filteredApartments', filteredApartments);
-    console.log('selectedCityId', selectedCityId);
-    console.log('saleStatus', saleStatus);
 
     return (
         <div id={"search"} className={'cover-photo'}>
@@ -52,11 +43,7 @@ const HomeSearch = ({ title, description }) => {
                                 pathname: '/gallery',
                                 state: {
                                     selectedCityId,
-                                    saleStatus,
-                                    cities,
-                                    apartments,
-                                    // filteredApartments,
-                                    // setFilteredApartments
+                                    saleStatus
                                 }
                             }}>
                                 <BsSearch />

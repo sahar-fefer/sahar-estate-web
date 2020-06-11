@@ -43,7 +43,7 @@ const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, minPr
                     {
                         cities.length &&
                         cities.map((city, key) => (
-                            <option value={city.id} key={key} selected={selectedCityId == city.id}>{city.name}</option>
+                            <option value={city.id} key={key} selected={parseInt(selectedCityId) === parseInt(city.id)}>{city.name}</option>
                         ))
                     }
                 </select>
