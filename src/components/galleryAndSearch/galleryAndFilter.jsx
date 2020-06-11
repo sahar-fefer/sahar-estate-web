@@ -23,7 +23,7 @@ const initialFilter = {
 const filterReducer = (state, { field, value }) => {
     return {
         ...state,
-        [field]: value
+        [field]: value 
     }
 }
 
