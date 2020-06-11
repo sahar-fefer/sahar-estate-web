@@ -9,8 +9,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -27,8 +26,7 @@ let apartments = [
         number_of_bath: 1,
         sqft: 500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: true, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
@@ -45,8 +43,7 @@ let apartments = [
         number_of_bath: 1,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -63,8 +60,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
@@ -81,8 +77,7 @@ let apartments = [
         number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -99,8 +94,7 @@ let apartments = [
         number_of_bath: 6,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -117,8 +111,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'available',
         property_type: 'land',
         description: 'My apartment description', //not exsist in db
@@ -135,8 +128,7 @@ let apartments = [
         number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'removed',
         property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
@@ -153,8 +145,7 @@ let apartments = [
         number_of_bath: 2,
         sqft: 900,
         created_on: '2020-01-09 21:24:03',
-        for_rent: true, //not exsist in db (sale status)
-        for_sale: false, //not exsist in db (sale status)
+        sale_status: 'sale', 
         availability: 'suspended',
         property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
@@ -171,8 +162,7 @@ let apartments = [
         number_of_bath: 1,
         sqft: 500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: true, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'sold', //not exsist in db
         property_type: 'ranch',
         description: 'My apartment description', //not exsist in db
@@ -189,8 +179,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'house',
         description: 'My apartment description', //not exsist in db
@@ -207,8 +196,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -225,8 +213,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -243,8 +230,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'house',
         description: 'My apartment description', //not exsist in db
@@ -261,8 +247,7 @@ let apartments = [
         number_of_bath: 1,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'land',
         description: 'My apartment description', //not exsist in db
@@ -279,8 +264,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'condo',
         description: 'My apartment description', //not exsist in db
@@ -296,8 +280,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent',
         availability: 'available',
         property_type: 'apartment',
         description: 'My apartment description', //not exsist in db
@@ -314,8 +297,7 @@ let apartments = [
         number_of_bath: 1,
         sqft: 500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: true, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'rent', 
         availability: 'available',
         property_type: 'house',
         description: 'My apartment description', //not exsist in db
@@ -332,8 +314,7 @@ let apartments = [
         number_of_bath: 2,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale',
         availability: 'available',
         property_type: 'house',
         description: 'My apartment description', //not exsist in db
@@ -350,8 +331,7 @@ let apartments = [
         number_of_bath: 3,
         sqft: 7500,
         created_on: '2020-01-09 21:24:03',
-        for_rent: false, //not exsist in db (sale status)
-        for_sale: true, //not exsist in db (sale status)
+        sale_status: 'sale',
         availability: 'available',
         property_type: 'land',
         description: 'My apartment description', //not exsist in db
