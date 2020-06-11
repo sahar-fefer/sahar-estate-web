@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import { withRouter, useLocation } from 'react-router-dom';
 
 // import { getCountries, getCountriesWithApartments, getCitiesOfCountry } from '../../api/countries-cities';
@@ -6,8 +6,8 @@ import { withRouter, useLocation } from 'react-router-dom';
 
 import Gallery from './gallery/gallery';
 
-import { apartments } from '../../app-data/apartment-data';
-import { cities } from '../../app-data/cities-data';
+// import { apartments } from '../../app-data/apartment-data';
+// import { cities } from '../../app-data/cities-data';
 import Filter from './filter/filter';
 
 const initialFilter = {
@@ -29,11 +29,22 @@ const filterReducer = (state, { field, value }) => {
 
 const GalleryAndFilter = () => {
     const [filterBy, dispatch] = useReducer(filterReducer, initialFilter);
-    const [filteredApartments, setFilteredApartments] = useState(apartments);
+    const [filteredApartments, setFilteredApartments] = useState([]);
     const location = useLocation();
 
-    const { selectedCityId, selectedCityName, saleStatus } = location.state;
-    console.log('selectedCityId', selectedCityId);
+    const { selectedCityId,
+        saleStatus,
+        cities,
+        apartments } = location.state;
+
+    useEffect(() => {
+        if (location.state.selectedCityId) {
+            setFilteredApartments(apartments.filter(apartment => apartment.cityId === parseInt(location.state.selectedCityId)))
+        } else {
+            setFilteredApartments(apartments)
+        }
+    }, [location]);
+
     const handleInputChange = (e) => {
         dispatch({ field: e.target.name, value: e.target.value })
     };
@@ -83,8 +94,7 @@ const GalleryAndFilter = () => {
                 cities={cities}
                 handleInputChange={handleInputChange}
                 handleSubmit={handleSubmit}
-                selectedCityId={selectedCityId} 
-                selectedCityName={selectedCityName}
+                selectedCityId={selectedCityId}
                 minPrice={minPrice}
                 maxPrice={maxPrice}
                 minBath={minBath}

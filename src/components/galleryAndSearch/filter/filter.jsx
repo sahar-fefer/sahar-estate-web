@@ -5,7 +5,7 @@ import Dropdown from "./dropdowns/dropdown";
 import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
 import BathOrRooms from "./dropdowns/searchContent/bathOrRooms";
 
-const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, selectedCityName, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
+const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
     const [activeDropdown, setActiveDropdown] = useState(-1);
     const dropdownsData = {
         priceDrop: {
