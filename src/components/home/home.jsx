@@ -1,18 +1,31 @@
 import React from 'react';
 
-// components
 import HomeSearch from './homeSearch';
 import InfoLine from './infoLine';
 import Footer from '../footer/footer';
+import { apartments } from '../../app-data/apartment-data';
 
-const Home = ({type, title, description}) => {
-    const info = [{number: '1,290', description: 'Homes For Sale'}, {number: '843', description: 'Homes For Rent'}, {number: '945', description: 'Recently Sold'}, {number: '390', description: 'Recently Rented'}, {number: '594', description: 'New Estates'}]
-    
+const Home = ({ title, description }) => {
+    const rentStatus = apartments.filter(apartment => apartment.sale_status === 'rent')
+    const saleStatus = apartments.filter(apartment => apartment.sale_status === 'sale')
+    const info = [
+        {
+            number: saleStatus.length,
+            description: 'Homes For Sale',
+            type: 'sale'
+        },
+        {
+            number: rentStatus.length,
+            description: 'Homes For Rent',
+            type: 'rent'
+
+        }]
+
     return (
         <div id="home">
             <HomeSearch title={title} description={description} />
-            <InfoLine info={info}/>
-            <Footer/>
+            <InfoLine info={info} />
+            <Footer />
         </div>
     );
 };
