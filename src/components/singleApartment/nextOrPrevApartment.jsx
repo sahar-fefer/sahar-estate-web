@@ -15,16 +15,22 @@ const NextOrPrevApartment = ({ apartment, type }) => {
                     backgroundSize: "cover",
                     backgroundImage: `url(/${apartment.main_image})`
                 }}>
-                <div onMouseOver={() => {
-                    setShowPrice(true)
-                }} onMouseLeave={() => {
-                    setShowPrice(false)
-                }} className={"nextPrevApartmentPointer"}>
+                <div
+                    onMouseOver={() => { setShowPrice(true) }}
+                    onMouseLeave={() => { setShowPrice(false) }}
+                    className={"nextPrevApartmentPointer"}>
                     {type === "next"
-                        ? <div><span>Next</span> <i className={"fa fa-chevron-right"} />{showPrice &&
-                            <div>{apartment.price}</div>}</div>
-                        : <div><i className={"fa fa-chevron-left"} /> <span>Prev</span> {showPrice &&
-                            <div>{apartment.price}</div>} </div>}
+                        ? <div>
+                            <span>Next</span>
+                            <i className={"fa fa-chevron-right"} />
+                            {showPrice && <div>{apartment.price}</div>}
+                        </div>
+                        : <div>
+                            <i className={"fa fa-chevron-left"} />
+                            <span>Prev</span>
+                            {showPrice && <div>{apartment.price}</div>}
+                        </div>
+                    }
                 </div>
             </div>
         </Link>
