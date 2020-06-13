@@ -305,7 +305,7 @@ body {
   border-top-left-radius: .25rem; }
 
 #gallery .status {
-  background-color: #088620;
+  background-color: #910667;
   color: white;
   position: absolute;
   top: 16px;
@@ -314,6 +314,8 @@ body {
 
 #gallery .price {
   color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
   font-weight: bold;
   position: absolute;
   bottom: 16px;
