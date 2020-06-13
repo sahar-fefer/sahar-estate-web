@@ -5,9 +5,9 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
 class Dropdown extends React.Component {
     render() {
-        const { isOpen, btnName, title, content, toggleDropdown } = this.props;
+        const { respons, isOpen, btnName, title, content, toggleDropdown } = this.props;
         return (
-            <div>
+            <div className={respons}>
                 <button className={"buttonStyle col-auto"} onClick={toggleDropdown}>
                     {btnName}
                     {isOpen ?

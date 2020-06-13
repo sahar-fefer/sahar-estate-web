@@ -476,6 +476,10 @@ body {
         border: 1px solid #00d99d;
         border-radius: 50%;
         color: #00d99d; }
+  #searchNav .allFiltersDropdown {
+    position: relative !important;
+    float: none !important;
+    margin: 5px; }
 
 #apartment {
   margin-top: 2rem; }
