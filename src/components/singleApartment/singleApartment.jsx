@@ -12,7 +12,7 @@ import NextOrPrevApartment from './nextOrPrevApartment';
 const searchPrevApartment = (curId) => {
     let prevId = parseInt(curId);
     let prev = {};
-    
+
     for (let i = 0; i < apartments.length; i++) {
         if (--prevId >= 0) {
             prev = apartments.find(apartment => parseInt(apartment.id) === prevId);
@@ -51,8 +51,14 @@ const SingleApartment = () => {
                     <ApartmentDetails apartmentData={apartmentData} />
                     <ApartmentMap />
                 </div>
-                <NextOrPrevApartment type={"prev"} apartment={prevApartment} />
-                <NextOrPrevApartment type={"next"} apartment={nextApartment} />
+                {
+                    prevApartment &&
+                    <NextOrPrevApartment type={"prev"} apartment={prevApartment} />
+                }
+                {
+                    nextApartment &&
+                    <NextOrPrevApartment type={"next"} apartment={nextApartment} />
+                }
             </div>
             <Footer />
         </div>
