@@ -5,6 +5,7 @@ import { withRouter, useLocation } from 'react-router-dom';
 // import { getApartments, getApartmentsByCountry, getApartmentsByCountryAndSaleStatus, getApartmentsByCountryOrAndSaleStatus } from '../../api/apartments';
 
 import Gallery from './gallery/gallery';
+import Footer from '../footer/footer';
 
 import { apartments } from '../../app-data/apartment-data';
 import { cities } from '../../app-data/cities-data';
@@ -23,7 +24,7 @@ const initialFilter = {
 const filterReducer = (state, { field, value }) => {
     return {
         ...state,
-        [field]: value 
+        [field]: value
     }
 }
 
@@ -82,20 +83,23 @@ const GalleryAndFilter = () => {
 
     const { minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms, city } = filterBy;
     return (
-        <div className={"container-fluid"}>
-            <Filter
-                cities={cities}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-                selectedCityId={selectedCityId}
-                minPrice={minPrice}
-                maxPrice={maxPrice}
-                minBath={minBath}
-                maxBath={maxBath}
-                minRooms={minRooms}
-                maxRooms={maxRooms}
-                city={city} />
-            <Gallery items={filteredApartments} />
+        <div>
+            <div className={"container-fluid"}>
+                <Filter
+                    cities={cities}
+                    handleInputChange={handleInputChange}
+                    handleSubmit={handleSubmit}
+                    selectedCityId={selectedCityId}
+                    minPrice={minPrice}
+                    maxPrice={maxPrice}
+                    minBath={minBath}
+                    maxBath={maxBath}
+                    minRooms={minRooms}
+                    maxRooms={maxRooms}
+                    city={city} />
+                <Gallery items={filteredApartments} />
+            </div>
+            <Footer />
         </div>
     );
 };

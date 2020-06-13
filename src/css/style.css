@@ -1,4 +1,22 @@
+/* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
+/* /////////////////////////    buttons    /////////////////////////// */
+.buttonStyle {
+  padding: .375rem .75rem;
+  color: #333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #9f9f9f;
+  border-radius: .25rem;
+  margin: 2.5px 5px;
+  position: relative;
+  outline: none !important;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s; }
+  .buttonStyle:hover {
+    background-color: #f7f5f5; }
+
 body {
   color: #333;
   outline: none !important;
@@ -37,7 +55,25 @@ body {
   body .bottom-line-chosed {
     border-bottom: 3px solid #01be89 !important; }
 
+/* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
+/* /////////////////////////    buttons    /////////////////////////// */
+.buttonStyle {
+  padding: .375rem .75rem;
+  color: #333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #9f9f9f;
+  border-radius: .25rem;
+  margin: 2.5px 5px;
+  position: relative;
+  outline: none !important;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s; }
+  .buttonStyle:hover {
+    background-color: #f7f5f5; }
+
 #header ul {
   margin: 0; }
   #header ul li {
@@ -120,7 +156,25 @@ body {
   border: 1px solid #00d99d;
   cursor: pointer; }
 
+/* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
+/* /////////////////////////    buttons    /////////////////////////// */
+.buttonStyle {
+  padding: .375rem .75rem;
+  color: #333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #9f9f9f;
+  border-radius: .25rem;
+  margin: 2.5px 5px;
+  position: relative;
+  outline: none !important;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s; }
+  .buttonStyle:hover {
+    background-color: #f7f5f5; }
+
 #footer {
   background-color: #333;
   padding: 10px; }
@@ -282,7 +336,25 @@ body {
         color: gray;
         text-decoration: none; }
 
+/* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
+/* /////////////////////////    buttons    /////////////////////////// */
+.buttonStyle {
+  padding: .375rem .75rem;
+  color: #333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #9f9f9f;
+  border-radius: .25rem;
+  margin: 2.5px 5px;
+  position: relative;
+  outline: none !important;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s; }
+  .buttonStyle:hover {
+    background-color: #f7f5f5; }
+
 #gallery .apartmentCard {
   padding-top: 7px;
   padding-bottom: 7px; }
