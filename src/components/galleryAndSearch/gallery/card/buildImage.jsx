@@ -17,8 +17,14 @@ const BuildImage = ({ currentCard }) => {
 
     return (
         <div className={"imageWrapper"} style={imageStyle}>
-            {currentCard.status && <div className={"status"}>{currentCard.created_on}</div>}
-            {currentCard.price && <h3 className={"price"}>{currentCard.price}</h3>}
+            {
+                currentCard.created_in_date &&
+                <div className={"status"}>{currentCard.created_in_date}</div>
+            }
+            {
+                currentCard.price &&
+                <h3 className={"price"}>{`$${currentCard.price}`}</h3>
+            }
             <div className={"heart"}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"
                     aria-labelledby="Save Listing" width="40" height="40" tabIndex="-1"
