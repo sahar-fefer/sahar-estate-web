@@ -1,4 +1,4 @@
-// colors
+/* /////////////////////////    colors    /////////////////////////// */
 $text: #333;
 $text_light: #9f9f9f;
 $text_dark: black;
@@ -26,3 +26,20 @@ $border-radius: .25rem;
 $position-inside-card: 16px;
 $padding-status: 2px 5px;
 $fill-heart-hover: rgba(225, 0, 0, 0.5);
+
+/* /////////////////////////    buttons    /////////////////////////// */
+.buttonStyle {
+    padding: .375rem .75rem;
+    color: $text;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid $text_light;
+    border-radius: .25rem;
+    margin: 2.5px 5px;
+    position: relative;
+    outline: none !important;
+    transition: background-color .3s;
+    &:hover {
+      background-color: $light;
+    }
+  }
