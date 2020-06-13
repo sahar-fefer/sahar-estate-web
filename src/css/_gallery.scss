@@ -26,7 +26,7 @@
   }
 
   .status {
-    background-color: $green;
+    background-color: $secondary;
     color: white;
     position: absolute;
     top: $position-inside-card;
@@ -36,6 +36,8 @@
 
   .price {
     color: white;
+    background-color: rgba($color: black, $alpha: .4);
+    border-radius: 5px;
     font-weight: bold;
     position: absolute;
     bottom: $position-inside-card;

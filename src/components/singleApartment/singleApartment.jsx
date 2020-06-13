@@ -52,7 +52,7 @@ const SingleApartment = () => {
                     <ApartmentMap />
                 </div>
                 <NextOrPrevApartment type={"prev"} apartment={prevApartment} />
-                <NextOrPrevApartment type={"next"} apartment={nextApartment} />}
+                <NextOrPrevApartment type={"next"} apartment={nextApartment} />
             </div>
             <Footer />
         </div>
