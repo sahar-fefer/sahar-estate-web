@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react';
 
-class OpenDropdown extends React.Component {
-    render() {
-        return (
-            <div className={"openDropdown"}>
-                <div className={"titleOpenDropdown"}>{this.props.title}</div>
-                <div className={"contentOpenDropdown"}>{this.props.content}</div>
+const OpenDropdown = ({type, title, content}) => {
+    return (
+        <div className={type ? 'openDropdown allFiltersDropdown' : "openDropdown"}>
+                <div className={"titleOpenDropdown"}>{title}</div>
+                <div className={"contentOpenDropdown"}>{content}</div>
             </div>
-        )
-    }
-}
+    );
+};
 
 export default OpenDropdown;
