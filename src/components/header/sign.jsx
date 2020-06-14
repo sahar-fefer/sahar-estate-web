@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaUserAstronaut, FaPhone, FaUserNinja } from 'react-icons/fa';
 import { MdEmail, MdFingerprint, MdSend } from 'react-icons/md';
 
-const Sign = props => {
+const Sign = () => {
     const [sign, setSign] = useState('signIn');
     return (
         <div className={'sign col'}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-// import { big_logo } from '../../../public/images/general/big_logo.png'
 const Logo = () => {
     return (
         <Link to='/' className={'col logo-wrapper justify-content-start justify-content-sm-center'}>
