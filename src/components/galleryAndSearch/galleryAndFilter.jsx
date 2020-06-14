@@ -1,9 +1,6 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import { withRouter, useLocation } from 'react-router-dom';
 
-// import { getCountries, getCountriesWithApartments, getCitiesOfCountry } from '../../api/countries-cities';
-// import { getApartments, getApartmentsByCountry, getApartmentsByCountryAndSaleStatus, getApartmentsByCountryOrAndSaleStatus } from '../../api/apartments';
-
 import Gallery from './gallery/gallery';
 import Footer from '../footer/footer';
 

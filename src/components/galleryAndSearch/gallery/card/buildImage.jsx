@@ -1,10 +1,8 @@
 import React from 'react';
-// import React, {useState} from 'react';
 
 const BuildImage = ({ currentCard }) => {
     const mainImage = currentCard.main_image;
     const templateImage = `./images/apartment/apartmentTemplate.png`;
-    // const [isLoading, setIsLoading] = useState(true);
 
     const imageStyle = {
         width: "100%",

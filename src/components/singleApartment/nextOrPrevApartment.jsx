@@ -37,9 +37,4 @@ const NextOrPrevApartment = ({ apartment, type }) => {
     );
 }
 
-// static defaultProps = {
-//     apartmentData: {}
-// }
-// };
-
 export default NextOrPrevApartment;
