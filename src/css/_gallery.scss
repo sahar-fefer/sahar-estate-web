@@ -120,22 +120,6 @@
     border-bottom-right-radius: 20px;
   }
 
-  .buttonStyle {
-    padding: .375rem .75rem;
-    color: $text;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid $text_light;
-    border-radius: .25rem;
-    margin: 2.5px 5px;
-    position: relative;
-    outline: none;
-    transition: background-color .3s;
-    &:hover {
-      background-color: $light;
-    }
-  }
-
   .cities {
     width: 221px;
   }

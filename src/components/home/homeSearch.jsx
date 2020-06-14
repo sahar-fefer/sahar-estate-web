@@ -15,8 +15,12 @@ const HomeSearch = ({ title, description }) => {
     return (
         <div id={"search"} className={'cover-photo'}>
             <div className={'container content-wrapper'}>
-                <h1 className={'title'}>{title}</h1>
-                <h3 className={'description d-sm-block'}>{description}</h3>
+                <h1 className={'title'}>
+                    Discover your perfect home
+                </h1>
+                <h3 className={'description d-sm-block'}>
+                    With the most complete source of homes for sale & rent real estate
+                </h3>
                 <ul className={'row sale-options-wrapper'}>
                     <li className={`col-auto sale-options`} onClick={() => setSaleStatus('sale')}>
                         <div className={`bottom-line ${saleStatus === "sale" && "bottom-line-chosed"}`}>Buy</div>
