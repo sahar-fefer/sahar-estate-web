@@ -2,13 +2,15 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Header from './components/header/header';
 import Home from './components/home/home';
 import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
 import singleApartment from './components/singleApartment/singleApartment';
+import PageNotFound from './components/notFound/pageNotFound';
 
 function App() {
   return (
@@ -16,16 +18,11 @@ function App() {
       <Header />
       <div>
         <Switch>
-          <Route path="/gallery">
-            <GalleryAndFilter />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/gallery" component={GalleryAndFilter} />
           <Route path="/apartment/:id" component={singleApartment} />
-          <Route path="/">
-            <Home
-              type={'home'}
-              title={"Discover your perfect home"}
-              description={"With the most complete source of homes for sale & rent real estate"} />
-          </Route>
+          <Route path='/404' component={PageNotFound} />
+          <Redirect from='*' to='/404' />
         </Switch>
       </div>
     </Router>
