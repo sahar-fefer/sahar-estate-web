@@ -1,21 +1,17 @@
-import axios from 'axios';
+import fetcher from './fetcher';
 
-import storage from './storage';
-
-export const getCountries = async () => {
-    if (storage.countries) return storage.countries;
-    const { data: countries } = await axios.get('/countries');
-    return countries;
+export const getCities = async () => {
+    const { data: cities } = await fetcher.get('/cities');
+    return cities;
 }
 
 
-export const getCountriesWithApartments = async () => {
-    if (storage.countries) return storage.countries;
-    const { data: countries } = await axios.get('/countries/withApartments');
-    return countries;
+export const getCitiesWithApartments = async () => {
+    const { data: cities } = await fetcher.get('/cities/withApartments');
+    return cities;
 }
 
-export const getCitiesOfCountry = async countryId => {
-    const { data: cities } = await axios.get(`/countries/${countryId}/cities`);
+export const getCitiesById = async cityId => {
+    const { data: cities } = await fetcher.get(`/cities/${cityId}`);
     return cities;
 }
