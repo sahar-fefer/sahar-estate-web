@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { cities } from '../../app-data/cities-data';
+
+// import { cities } from '../../app-data/cities-data';
+import { getCities } from '../../api/cities';
 
 import { BsSearch } from 'react-icons/bs';
 
 const HomeSearch = ({ title, description }) => {
     const [selectedCityId, setSelectedCityId] = useState('');
     const [saleStatus, setSaleStatus] = useState('');
+    const [cities, setCities] = useState('');
+
+    useEffect( () => {
+        fetchCities()
+    }, [])
+
+    const fetchCities = async () => {
+        const cities = await getCities();
+        setCities(cities);
+    }
 
     const handleSelectCity = (e) => {
         setSelectedCityId(e.target.value);
