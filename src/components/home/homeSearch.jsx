@@ -11,19 +11,19 @@ const HomeSearch = ({ title, description }) => {
     const [saleStatus, setSaleStatus] = useState('');
     const [cities, setCities] = useState('');
 
-    useEffect( () => {
+    useEffect(() => {
         fetchCities()
     }, [])
 
     const fetchCities = async () => {
-        const cities = await getCities();
-        setCities(cities);
+        setCities(JSON.parse(localStorage.getItem('cities')) || await getCities())
     }
 
     const handleSelectCity = (e) => {
         setSelectedCityId(e.target.value);
     }
 
+    console.log('cities', cities);
     return (
         <div id={"search"} className={'cover-photo'}>
             <div className={'container content-wrapper'}>
