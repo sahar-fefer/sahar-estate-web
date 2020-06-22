@@ -1,9 +1,9 @@
 import fetcher from './fetcher';
 
-export const getApartments = async (parameters) => {
+export const getApartments = async ({id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, property_type, sale_status, page, size}) => {
     try {
-        const { id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, sale_status } = parameters;
-        const { data: apartments } = await fetcher.get(`/apartments?id=${id ? id : ''}&city_id=${city_id ? city_id : ''}&min_price=${min_price ? min_price : ''}&max_price=${max_price ? max_price : ''}&sale_status=${sale_status ? sale_status : ""}`);
+        console.log('id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, propertyType, sale_status', id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, property_type, sale_status);
+        const { data: apartments } = await fetcher.get(`/apartments?id=${id ? id : ''}&city_id=${city_id ? city_id : ''}&min_price=${min_price ? min_price : ''}&max_price=${max_price ? max_price : ''}&min_bath=${min_bath ? min_bath : ''}&max_bath=${max_bath ? max_bath : ''}&min_room=${min_room ? min_room : ''}&max_room=${max_room ? max_room : ''}&property_type=${property_type ? property_type : ''}&sale_status=${sale_status ? sale_status : ""}&page=${page ? page : ""}&size=${size ? size : ""}`);
         return apartments;
     } catch (error) {
         console.log(error)
@@ -73,7 +73,7 @@ export const addApartment = async (formData) => {
 
 export const updateAvailabilityApartment = async (apartment_id, availability) => {
     try {
-        const { data } = await fetcher.put(`/apartments/:${apartment_id}/:${availability}/availability`, formData);
+        const { data } = await fetcher.put(`/apartments/:${apartment_id}/:${availability}/availability`, apartment_id, availability);
         return data;
     } catch (error) {
         console.dir(error);
@@ -83,7 +83,7 @@ export const updateAvailabilityApartment = async (apartment_id, availability) =>
 
 export const updateApartmentStatus = async (apartment_id, status) => {
     try {
-        const { data } = await fetcher.put(`/apartments/:${apartment_id}/:${status}/status`, formData);
+        const { data } = await fetcher.put(`/apartments/:${apartment_id}/:${status}/status`, apartment_id, status);
         return data;
     } catch (error) {
         console.dir(error);

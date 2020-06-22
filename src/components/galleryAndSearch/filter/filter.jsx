@@ -6,26 +6,26 @@ import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
 import BathOrRooms from "./dropdowns/searchContent/bathOrRooms";
 import OpenDropdown from './dropdowns/openDropdown';
 
-const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, minPrice, maxPrice, minBath, maxBath, minRooms, maxRooms }) => {
+const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, max_price, min_bath, max_bath, min_rooms, max_rooms }) => {
     const [activeDropdown, setActiveDropdown] = useState(-1);
     const dropdownsData = {
         priceDrop: {
             btnName: "Price",
             title: "Price Range",
             respons: "d-none d-sm-block",
-            content: <LargePriceContent handleInputChange={handleInputChange} minPrice={minPrice} maxPrice={maxPrice} />
+            content: <LargePriceContent handleInputChange={handleInputChange} min_price={min_price} max_price={max_price} />
         },
         bathDrop: {
-            btnName: "Bath",
+            btnName: "Baths",
             title: "Bathrooms",
             respons: "d-none d-sm-block",
-            content: <BathOrRooms handleInputChange={handleInputChange} minBath={minBath} maxBath={maxBath} type={'Bath'} />
+            content: <BathOrRooms handleInputChange={handleInputChange} min_bath={min_bath} max_bath={max_bath} type={'Bath'} />
         },
         roomsDrop: {
             btnName: "Rooms",
             title: "Rooms",
             respons: "d-none d-sm-block",
-            content: <BathOrRooms handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} type={'Rooms'} />
+            content: <BathOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'Rooms'} />
         },
         allFilters: {
             btnName: "More Filters",
@@ -35,15 +35,15 @@ const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, minPr
                 <OpenDropdown
                     type={'allFilters'}
                     title={'Price Rnge'}
-                    content={<LargePriceContent handleInputChange={handleInputChange} minPrice={minPrice} maxPrice={maxPrice} />} />
+                    content={<LargePriceContent handleInputChange={handleInputChange} min_price={min_price} max_price={max_price} />} />
                 <OpenDropdown
                     type={'allFilters'}
                     title={'Bathrooms'}
-                    content={<BathOrRooms handleInputChange={handleInputChange} minBath={minBath} maxBath={maxBath} type={'Bath'} />} />
+                    content={<BathOrRooms handleInputChange={handleInputChange} min_bath={min_bath} max_bath={max_bath} type={'Baths'} />} />
                 <OpenDropdown
                     type={'allFilters'}
                     title={'Rooms'}
-                    content={<BathOrRooms handleInputChange={handleInputChange} minRooms={minRooms} maxRooms={maxRooms} type={'Rooms'} />} />
+                    content={<BathOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'Rooms'} />} />
             </div>
         }
     }
@@ -62,16 +62,18 @@ const Filter = ({ cities, handleSubmit, handleInputChange, selectedCityId, minPr
             <form className="search-option form-inline">
                 <select className={"buttonStyle cities col-3"} name="city_id" onClick={handleInputChange}>
 
-                    <option value={""} disabled selected hidden>Cities</option>
+                    <option value={""} disabled hidden>Cities</option>
+                    <option value={""} >All Cities</option>
                     {
                         cities.length &&
                         cities.map((city, key) => (
-                            <option value={city.id} key={key} selected={parseInt(selectedCityId) === parseInt(city.id)}>{city.name}</option>
+                            <option value={city.id} key={key} selected={parseInt(city_id) === parseInt(city.id)}>{city.name}</option>
                         ))
                     }
                 </select>
                 <select className={"buttonStyle cities col-3 d-none d-md-block"} name="property_type" onClick={handleInputChange}>
                     <option value={""} disabled selected hidden>Property Type</option>
+                    <option value={""}>All Propertys Types</option>
                     {
                         property_types.map((property_type, key) => (
                             <option value={property_type} key={key}>{property_type}</option>
