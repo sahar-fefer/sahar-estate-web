@@ -5,7 +5,9 @@ import Gallery from './gallery/gallery';
 import Footer from '../footer/footer';
 
 import { apartments } from '../../app-data/apartment-data';
-import { cities } from '../../app-data/cities-data';
+import { getCities } from '../../api/cities';
+// import { cities } from '../../app-data/cities-data';
+
 import Filter from './filter/filter';
 
 const initialFilter = {
@@ -28,6 +30,7 @@ const filterReducer = (state, { field, value }) => {
 const GalleryAndFilter = () => {
     const [filterBy, dispatch] = useReducer(filterReducer, initialFilter);
     const [filteredApartments, setFilteredApartments] = useState([]);
+    const [cities, setCities] = useState('');
     const location = useLocation();
 
     const { selectedCityId, saleStatus } = location.state;
@@ -35,6 +38,14 @@ const GalleryAndFilter = () => {
     useEffect(() => {
         setFilteredApartments(updateGalleryItems())
     }, [location]);
+
+    useEffect(() => {
+        fetchCities()
+    }, [])
+    
+    const fetchCities = async () => {
+        setCities(JSON.parse(localStorage.getItem('cities')) || await getCities())
+    }
 
     const handleInputChange = (e) => {
         dispatch({ field: e.target.name, value: e.target.value })

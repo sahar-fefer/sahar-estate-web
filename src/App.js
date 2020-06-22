@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,8 +11,19 @@ import Home from './components/home/home';
 import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
 import singleApartment from './components/singleApartment/singleApartment';
 import PageNotFound from './components/notFound/pageNotFound';
+import { getCities } from './api/cities';
 
 function App() {
+
+  useEffect(() => {
+    fetchCities()
+  }, [])
+
+  const fetchCities = async () => {
+    const cities = await getCities();
+    localStorage.setItem('cities', JSON.stringify(cities));
+  }
+
   return (
     <Router>
       <Header />
