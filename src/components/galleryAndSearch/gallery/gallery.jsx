@@ -1,19 +1,26 @@
 import React from "react";
 import Card from "./card/card";
-import { useState } from "react";
 
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-const Gallery = ({ items }) => {
-    const [paginationIndex, setPaginationIndex] = useState(6);
+import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
+const Gallery = ({ items, sizeGallery, nextPrevApartments, page, size }) => {
 
     return (
         <div id={"gallery"} className={"container-fluid"}>
             <h4 className={"mt-3"}>Real Estate & Homes For Sale</h4>
-            <div className={"col-auto"}>{`${items ? items.length : 0} Homes`}</div>
+            <div className={'row'}>
+                <div className={"col-auto mt-auto mb-auto"}>{`${items ? items.length : 0} Homes`}</div>
+                <header className={"mt-auto mb-auto ml-2"}>Set Size</header>
+                <select className={"buttonStyle border-0 col-auto"} name="size" onClick={sizeGallery}>
+                    <option value={""} disabled hidden>Size</option>
+                    <option value={6}>6</option>
+                    <option value={12}>12</option>
+                    <option value={24}>24</option>
+                    <option value={48}>48</option>
+                </select>
+            </div>
             <div className={"row"}>
                 {items ? items.map((item, i) => {
                     return (
-                        i < paginationIndex &&
                         <Card data={item} key={i} />
                     )
                 }) :
@@ -24,17 +31,17 @@ const Gallery = ({ items }) => {
                 items &&
                 <div className={'d-flex justify-content-center'}>
                     {
-                        paginationIndex < items.length &&
-                        <button className={'buttonStyle'} onClick={() => setPaginationIndex(paginationIndex + 6)}>
-                            Show More
-                            <BsChevronDown className={'m-1'} />
+                        page > 1 &&
+                        <button className={'buttonStyle'} onClick={() => nextPrevApartments("-")}>
+                            <BsChevronLeft className={'m-1'} />
+                            Prev Page
                         </button>
                     }
                     {
-                        paginationIndex > 6 &&
-                        <button className={'buttonStyle'} onClick={() => setPaginationIndex(paginationIndex - 6)}>
-                            Show Less
-                            <BsChevronUp className={'m-1'} />
+                        items.length === size &&
+                        <button className={'buttonStyle'} onClick={() => nextPrevApartments("+")}>
+                            Next Page
+                            <BsChevronRight className={'m-1'} />
                         </button>
                     }
                 </div>

@@ -9,7 +9,7 @@ import { BsSearch } from 'react-icons/bs';
 const HomeSearch = ({ title, description }) => {
     const [selectedCityId, setSelectedCityId] = useState('');
     const [saleStatus, setSaleStatus] = useState('');
-    const [cities, setCities] = useState('');
+    const [cities, setCities] = useState([]);
 
     useEffect(() => {
         fetchCities()

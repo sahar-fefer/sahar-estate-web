@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BathOrRooms = ({ handleInputChange, minBath, maxBath, minRooms, maxRooms, type }) => {
+const BathOrRooms = ({ handleInputChange, type }) => {
     return (
         <div className="wrapper row">
             <select className={"buttonInputStyle col-auto"} name={`min${type}`} onClick={handleInputChange}>
