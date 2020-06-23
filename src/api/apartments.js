@@ -1,9 +1,22 @@
 import fetcher from './fetcher';
 
-export const getApartments = async ({id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, property_type, sale_status, page, size}) => {
+export const getApartments = async ({ id, city_id, min_price, max_price, min_baths, max_baths, min_rooms, max_rooms, property_type, sale_status, page, size }) => {
     try {
-        console.log('id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, propertyType, sale_status', id, city_id, min_price, max_price, min_bath, max_bath, min_room, max_room, property_type, sale_status);
-        const { data: apartments } = await fetcher.get(`/apartments?id=${id ? id : ''}&city_id=${city_id ? city_id : ''}&min_price=${min_price ? min_price : ''}&max_price=${max_price ? max_price : ''}&min_bath=${min_bath ? min_bath : ''}&max_bath=${max_bath ? max_bath : ''}&min_room=${min_room ? min_room : ''}&max_room=${max_room ? max_room : ''}&property_type=${property_type ? property_type : ''}&sale_status=${sale_status ? sale_status : ""}&page=${page ? page : ""}&size=${size ? size : ""}`);
+        // console.log( propertyType, sale_status', id, city_id, min_price, max_price, min_baths, max_baths, min_rooms, max_rooms, property_type, sale_status);
+        // console.log('id', id);
+        // console.log('city_id', city_id);
+        // console.log('city_id', city_id);
+        // console.log('min_price', min_price);
+        // console.log('max_price', max_price);
+        // console.log('min_rooms', min_rooms);
+        // console.log('max_rooms', max_rooms);
+        // console.log('min_baths', min_baths);
+        // console.log('max_baths', max_baths);
+        // console.log('property_type', property_type);
+        // console.log('sale_status', sale_status);
+        // console.log('page', page);
+        // console.log('size', size);
+        const { data: apartments } = await fetcher.get(`/apartments?id=${id ? id : ''}&city_id=${city_id ? city_id : ''}&min_price=${min_price ? min_price : ''}&max_price=${max_price ? max_price : ''}&min_baths=${min_baths ? min_baths : ''}&max_baths=${max_baths ? max_baths : ''}&min_rooms=${min_rooms ? min_rooms : ''}&max_rooms=${max_rooms ? max_rooms : ''}&property_type=${property_type ? property_type : ''}&sale_status=${sale_status ? sale_status : ""}&page=${page ? page : ""}&size=${size ? size : ""}`);
         return apartments;
     } catch (error) {
         console.log(error)

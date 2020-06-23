@@ -15,8 +15,8 @@ const GalleryAndFilter = () => {
         city_id: '',
         min_price: '',
         max_price: '',
-        min_bath: '',
-        max_bath: '',
+        min_baths: '',
+        max_baths: '',
         min_rooms: '',
         max_rooms: '',
         property_type: '',
@@ -59,8 +59,8 @@ const GalleryAndFilter = () => {
 
     const fetchApartments = async () => {
         const apartm = await getApartments({ ...filterBy });
-        console.log('filterBy', filterBy);
-        console.log('apartments', apartm);
+        // console.log('filterBy', filterBy);
+        // console.log('apartments', apartm);
         setFilteredApartments(await getApartments({ ...filterBy }));
     }
 
@@ -76,7 +76,7 @@ const GalleryAndFilter = () => {
         await fetchApartments({ ...filterBy });
     };
 
-    const nextPrevApartments = (type) => {
+    const nextPrevPage = (type) => {
         setFilterBy({
             ...filterBy,
             page: type === "+" ? filterBy.page + 1 : filterBy.page - 1
@@ -102,7 +102,7 @@ const GalleryAndFilter = () => {
                     {...filterBy} />
                 <Gallery items={filteredApartments}
                     sizeGallery={sizeGallery}
-                    nextPrevApartments={nextPrevApartments}
+                    nextPrevPage={nextPrevPage}
                     page={filterBy.page}
                     size={filterBy.size} />
             </div>

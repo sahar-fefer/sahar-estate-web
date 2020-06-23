@@ -54,6 +54,37 @@ body {
       border-bottom: 3px solid #00d99d; }
   body .bottom-line-chosed {
     border-bottom: 3px solid #01be89 !important; }
+  body .left-top {
+    background-color: #910667;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 2px 5px;
+    z-index: 1; }
+  body .left-bottom {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 2px 5px;
+    margin: 0;
+    z-index: 1; }
+  body .right-top {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 2px 5px;
+    margin: 0;
+    z-index: 1; }
 
 /* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
@@ -376,24 +407,6 @@ body {
   border-top-right-radius: .25rem;
   border-top-left-radius: .25rem; }
 
-#gallery .status {
-  background-color: #910667;
-  color: white;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 2px 5px; }
-
-#gallery .price {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  font-weight: bold;
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  margin: 0; }
-
 #gallery .heart {
   position: absolute;
   right: 16px; }
@@ -607,6 +620,18 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  #carousel-and-form-wrapper .wrapperNoneImage {
+    height: 60vh;
+    position: relative;
+    width: 100%;
+    margin-right: 20px; }
+    #carousel-and-form-wrapper .wrapperNoneImage .noneImage {
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      width: 100%; }
 
 #carousel-example-interval {
   width: 100%; }
@@ -623,6 +648,9 @@ body {
 @media (min-width: 992px) {
   #carousel-example-interval {
     width: 70%; } }
+
+.apartmentDetails {
+  width: 30%; }
 
 .map-apartment {
   height: 17rem;

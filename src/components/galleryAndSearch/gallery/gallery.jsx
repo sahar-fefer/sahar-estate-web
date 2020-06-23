@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./card/card";
 
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-const Gallery = ({ items, sizeGallery, nextPrevApartments, page, size }) => {
+const Gallery = ({ items, sizeGallery, nextPrevPage, page, size }) => {
 
     return (
         <div id={"gallery"} className={"container-fluid"}>
@@ -21,7 +21,7 @@ const Gallery = ({ items, sizeGallery, nextPrevApartments, page, size }) => {
             <div className={"row"}>
                 {items ? items.map((item, i) => {
                     return (
-                        <Card data={item} key={i} />
+                        <Card data={item} items={items} key={i} />
                     )
                 }) :
                     <p>No apartments match for this search</p>
@@ -32,14 +32,14 @@ const Gallery = ({ items, sizeGallery, nextPrevApartments, page, size }) => {
                 <div className={'d-flex justify-content-center'}>
                     {
                         page > 1 &&
-                        <button className={'buttonStyle'} onClick={() => nextPrevApartments("-")}>
+                        <button className={'buttonStyle'} onClick={() => nextPrevPage("-")}>
                             <BsChevronLeft className={'m-1'} />
                             Prev Page
                         </button>
                     }
                     {
                         items.length === size &&
-                        <button className={'buttonStyle'} onClick={() => nextPrevApartments("+")}>
+                        <button className={'buttonStyle'} onClick={() => nextPrevPage("+")}>
                             Next Page
                             <BsChevronRight className={'m-1'} />
                         </button>

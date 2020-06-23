@@ -47,4 +47,42 @@ body {
   .bottom-line-chosed {
     border-bottom: 3px solid $primary_dark !important;
   }
+
+  .left-top { 
+    background-color: $secondary;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: $position-inside-card;
+    left: $position-inside-card;
+    padding: $padding-status;
+    z-index: 1;
+  }
+
+  .left-bottom {
+    color: white;
+    background-color: rgba($color: black, $alpha: .4);
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    bottom: $position-inside-card;
+    left: $position-inside-card;
+    padding: $padding-status;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .right-top {
+    color: white;
+    background-color: rgba($color: black, $alpha: .4);
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: $position-inside-card;
+    right: $position-inside-card;
+    padding: $padding-status;
+    margin: 0;
+    z-index: 1;
+  }
+
 }
