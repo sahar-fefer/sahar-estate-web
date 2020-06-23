@@ -3,10 +3,11 @@ import { BsSearch } from 'react-icons/bs';
 
 import Dropdown from "./dropdowns/dropdown";
 import LargePriceContent from "./dropdowns/searchContent/largePriceContent";
-import BathOrRooms from "./dropdowns/searchContent/bathOrRooms";
+// import bathsOrRooms from "./dropdowns/searchContent/bathsOrRooms";
 import OpenDropdown from './dropdowns/openDropdown';
+import BathsOrRooms from './dropdowns/searchContent/bathsOrRooms';
 
-const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, max_price, min_bath, max_bath, min_rooms, max_rooms }) => {
+const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, max_price, min_baths, max_baths, min_rooms, max_rooms }) => {
     const [activeDropdown, setActiveDropdown] = useState(-1);
     const dropdownsData = {
         priceDrop: {
@@ -15,17 +16,17 @@ const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, m
             respons: "d-none d-sm-block",
             content: <LargePriceContent handleInputChange={handleInputChange} min_price={min_price} max_price={max_price} />
         },
-        bathDrop: {
-            btnName: "Baths",
-            title: "Bathrooms",
+        bathsDrop: {
+            btnName: "baths",
+            title: "bathrooms",
             respons: "d-none d-sm-block",
-            content: <BathOrRooms handleInputChange={handleInputChange} min_bath={min_bath} max_bath={max_bath} type={'Bath'} />
+            content: <BathsOrRooms handleInputChange={handleInputChange} min_baths={min_baths} max_baths={max_baths} type={'baths'} />
         },
         roomsDrop: {
             btnName: "Rooms",
             title: "Rooms",
             respons: "d-none d-sm-block",
-            content: <BathOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'Rooms'} />
+            content: <BathsOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'rooms'} />
         },
         allFilters: {
             btnName: "More Filters",
@@ -38,19 +39,19 @@ const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, m
                     content={<LargePriceContent handleInputChange={handleInputChange} min_price={min_price} max_price={max_price} />} />
                 <OpenDropdown
                     type={'allFilters'}
-                    title={'Bathrooms'}
-                    content={<BathOrRooms handleInputChange={handleInputChange} min_bath={min_bath} max_bath={max_bath} type={'Baths'} />} />
+                    title={'bathrooms'}
+                    content={<bathsOrRooms handleInputChange={handleInputChange} min_baths={min_baths} max_baths={max_baths} type={'baths'} />} />
                 <OpenDropdown
                     type={'allFilters'}
                     title={'Rooms'}
-                    content={<BathOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'Rooms'} />} />
+                    content={<bathsOrRooms handleInputChange={handleInputChange} min_rooms={min_rooms} max_rooms={max_rooms} type={'Rooms'} />} />
             </div>
         }
     }
 
     const property_types = ['apartment', 'condo', 'land', 'house', 'ranch'];
 
-    const { priceDrop, bathDrop, roomsDrop, allFilters } = dropdownsData;
+    const { priceDrop, bathsDrop, roomsDrop, allFilters } = dropdownsData;
 
     const toggleDropdownItems = (e, index) => {
         e.preventDefault();
@@ -88,12 +89,12 @@ const Filter = ({ cities, handleSubmit, handleInputChange, city_id, min_price, m
                     title={priceDrop.title}
                     content={priceDrop.content} />
                 <Dropdown
-                    respons={bathDrop.respons}
+                    respons={bathsDrop.respons}
                     isOpen={activeDropdown === 2}
                     toggleDropdown={(e) => toggleDropdownItems(e, 2)}
-                    btnName={bathDrop.btnName}
-                    title={bathDrop.title}
-                    content={bathDrop.content} />
+                    btnName={bathsDrop.btnName}
+                    title={bathsDrop.title}
+                    content={bathsDrop.content} />
                 <Dropdown
                     respons={roomsDrop.respons}
                     isOpen={activeDropdown === 3}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { FiUser, FiMail, FiPhone } from 'react-icons/fi';
 
-const FormApartment = ({ apartmentData }) => {
+const FormApartment = ({ address }) => {
+    // console.log('address', address);
     return (
         <div id={"apartment-form"} className={"d-none d-lg-flex"}>
             <form>
@@ -18,7 +19,7 @@ const FormApartment = ({ apartmentData }) => {
                     <FiPhone className={'icon'} />
                     <input className={"input"} />
                 </div>
-                <textarea className={"input-wrapper"} defaultValue={`I am interested in ${apartmentData.address}`} />
+                <textarea className={"input-wrapper"} defaultValue={`I am interested in ${address ? address : 'this Real Estate'}`} />
                 <input className={"input-wrapper submit"} type={"submit"} value={'Send'} />
             </form>
         </div>

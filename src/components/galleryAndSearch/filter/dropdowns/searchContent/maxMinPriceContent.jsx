@@ -9,11 +9,11 @@ class MaxMinPriceContent extends React.Component {
     }
 
     render() {
-        const { handleInputChange, minPrice, maxPrice, type } = this.props;
+        const { handleInputChange, min_price, max_price, type } = this.props;
         return (
             <div className="col-6 inputPrice">
                 <div className="buttonInputStyle d-flex align-items-center">  {/*onClick={this.props.toggleDropDown}*/}
-                    <input className={"inputInsidePrice"} name={type === 'Min' ? 'minPrice' : 'maxPrice'} value={type === 'Min' ? minPrice : maxPrice} placeholder={maxPrice || minPrice ? maxPrice || minPrice : `$ No ${type}`} onChange={handleInputChange} />
+                    <input className={"inputInsidePrice"} name={type === 'Min' ? 'min_price' : 'max_price'} value={type === 'Min' ? min_price : max_price} placeholder={max_price || min_price ? max_price || min_price : `$ No ${type}`} onChange={handleInputChange} />
                 </div>
             </div>
         )

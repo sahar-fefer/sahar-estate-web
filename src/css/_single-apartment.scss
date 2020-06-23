@@ -69,6 +69,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .wrapperNoneImage {
+    height: 60vh;
+    position: relative;
+    width: 100%;
+    margin-right: 20px;
+  
+    .noneImage {
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      width: 100%;
+    }
+  }
 }
 
 //////////////////////    APARTMENT CAROUSEL    //////////////////////
@@ -93,6 +109,11 @@
   #carousel-example-interval {
     width: 70%;
   }
+}
+
+//////////////////////    Details    //////////////////////
+.apartmentDetails {
+  width: 30%;
 }
 
 //////////////////////    MAP    //////////////////////

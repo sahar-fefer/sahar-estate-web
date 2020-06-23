@@ -25,26 +25,6 @@
     border-top-left-radius: .25rem;
   }
 
-  .status {
-    background-color: $secondary;
-    color: white;
-    position: absolute;
-    top: $position-inside-card;
-    left: $position-inside-card;
-    padding: $padding-status;
-  }
-
-  .price {
-    color: white;
-    background-color: rgba($color: black, $alpha: .4);
-    border-radius: 5px;
-    font-weight: bold;
-    position: absolute;
-    bottom: $position-inside-card;
-    left: $position-inside-card;
-    margin: 0;
-  }
-
   .heart {
     position: absolute;
     right: $position-inside-card;

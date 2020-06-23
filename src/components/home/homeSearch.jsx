@@ -23,7 +23,6 @@ const HomeSearch = ({ title, description }) => {
         setSelectedCityId(e.target.value);
     }
 
-    console.log('cities', cities);
     return (
         <div id={"search"} className={'cover-photo'}>
             <div className={'container content-wrapper'}>

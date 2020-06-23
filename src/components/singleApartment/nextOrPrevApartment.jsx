@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { apartments } from '../../app-data/apartment-data';
 
-const NextOrPrevApartment = ({ apartment, type }) => {
+const NextOrPrevApartment = ({ apartment, type, items }) => {
     const [showPrice, setShowPrice] = useState(false);
+    // console.log('items next prev', items);
+    // console.log('apartment next prev', apartment);
     return (
-        <Link to={`/apartment/${apartment.id}`} className={'d-none d-sm-block'}>
-            <div
+        // <Link to={`/apartment/${apartment.id}`} className={'d-none d-sm-block'}>
+        <Link to={{
+            pathname: `/apartment/${apartment.id}`,
+            state: {
+                items
+            }
+        }} className={'d-none d-sm-block'}>
+            {
+                items.length &&
+                <div
                 style={{
                     zIndex: 2,
                     left: type === 'prev' && 0,
@@ -33,6 +44,7 @@ const NextOrPrevApartment = ({ apartment, type }) => {
                     }
                 </div>
             </div>
+            }
         </Link>
     );
 }
