@@ -10,10 +10,10 @@ const Sign = () => {
                 <li className={'col icon-astronaut d-sm-none'} data-toggle={"modal"} data-target={"#exampleModalCenter"}>
                     <FaUserAstronaut />
                 </li>
-                <li className={'header-option col-auto d-sm-block'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signIn')}>
+                <li className={'bottom-line header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signIn')}>
                     Sign In
                 </li>
-                <li className={'header-option col-auto d-sm-block'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signUp')}>
+                <li className={'bottom-line header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signUp')}>
                     Sign Up
                 </li>
             </ul>

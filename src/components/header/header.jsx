@@ -5,13 +5,13 @@ import Options from './options';
 import Logo from './logo';
 import Sign from './sign';
 
-const Header = props => {
+const Header = () => {
     return (
         <div id={'header'} className={'container-fluid'}>
             <div className={'row'}>
                 <Options />
-                <Logo/>
-                <Sign/>
+                <Logo />
+                <Sign />
             </div>
         </div>
     );

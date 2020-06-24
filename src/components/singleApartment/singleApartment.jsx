@@ -5,7 +5,6 @@ import Carousel from "./carousel";
 import ApartmentDetails from "./apartmentDetails";
 import ApartmentMap from "./apartmentMap";
 
-import { apartments } from '../../app-data/apartment-data';
 import { getApartments, getApartmentImages } from '../../api/apartments';
 import Footer from '../footer/footer';
 import NextOrPrevApartment from './nextOrPrevApartment';

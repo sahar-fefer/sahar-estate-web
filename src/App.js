@@ -11,7 +11,7 @@ import Home from './components/home/home';
 import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
 import singleApartment from './components/singleApartment/singleApartment';
 import PageNotFound from './components/notFound/pageNotFound';
-import { getCities } from './api/cities';
+import { getCitiesWithApartments } from './api/cities';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
   }, [])
 
   const fetchCities = async () => {
-    const cities = await getCities();
+    const cities = await getCitiesWithApartments();
     localStorage.setItem('cities', JSON.stringify(cities));
   }
 
