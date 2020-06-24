@@ -5,7 +5,7 @@ import Gallery from './gallery/gallery';
 import Footer from '../footer/footer';
 
 import { getApartments } from '../../api/apartments';
-import { getCities } from '../../api/cities';
+import { getCitiesWithApartments } from '../../api/cities';
 
 import Filter from './filter/filter';
 
@@ -54,7 +54,7 @@ const GalleryAndFilter = () => {
     }, [])
 
     const fetchCities = async () => {
-        setCities(JSON.parse(localStorage.getItem('cities')) || await getCities())
+        setCities(JSON.parse(localStorage.getItem('cities')) || await getCitiesWithApartments())
     }
 
     const fetchApartments = async () => {

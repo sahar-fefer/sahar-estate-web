@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // import { cities } from '../../app-data/cities-data';
-import { getCities } from '../../api/cities';
+import { getCitiesWithApartments } from '../../api/cities';
 
 import { BsSearch } from 'react-icons/bs';
 
-const HomeSearch = ({ title, description }) => {
+const HomeSearch = () => {
     const [selectedCityId, setSelectedCityId] = useState('');
     const [saleStatus, setSaleStatus] = useState('');
     const [cities, setCities] = useState([]);
@@ -16,7 +16,7 @@ const HomeSearch = ({ title, description }) => {
     }, [])
 
     const fetchCities = async () => {
-        setCities(JSON.parse(localStorage.getItem('cities')) || await getCities())
+        setCities(JSON.parse(localStorage.getItem('cities')) || await getCitiesWithApartments())
     }
 
     const handleSelectCity = (e) => {

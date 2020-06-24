@@ -129,7 +129,6 @@ body {
     margin: 4px; }
 
 #header .options li {
-  margin-right: 25px;
   text-align: left;
   outline: none; }
 
@@ -650,7 +649,9 @@ body {
     width: 70%; } }
 
 .apartmentDetails {
-  width: 30%; }
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
 
 .map-apartment {
   height: 17rem;
@@ -659,8 +660,7 @@ body {
   .map-apartment .map-container {
     overflow: hidden;
     position: relative;
-    height: 100%;
-    width: 100%; }
+    height: 100%; }
   .map-apartment .map-container iframe {
     right: 0;
     top: 0;
@@ -670,7 +670,12 @@ body {
 
 @media (min-width: 576px) {
   .map-apartment .map-container {
-    width: 60%;
+    width: 70%;
+    margin-left: auto; } }
+
+@media (max-width: 575.98px) {
+  .map-apartment .map-container {
+    width: 30%;
     margin-left: auto; } }
 
 #not-pound {

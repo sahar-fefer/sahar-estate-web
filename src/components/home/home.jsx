@@ -1,13 +1,24 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+
+import { getRentSaleApartments } from '../../api/apartments';
 
 import HomeSearch from './homeSearch';
 import InfoLine from './infoLine';
 import Footer from '../footer/footer';
-import { apartments } from '../../app-data/apartment-data';
 
 const Home = ({ title, description }) => {
     const [userContact, setUserContact] = useState('');
+    const [rentOrSale, setRentOrSale] = useState({});
+    useEffect(() => {
+        getRentOrSale();
+    }, [])
+
+    const getRentOrSale = async () => {
+        const rentOrSale = await getRentSaleApartments();
+        setRentOrSale(rentOrSale);
+    }
+
     useEffect(() => {
         const cookie = Cookies.get('auth');
         if (cookie) {
@@ -15,16 +26,14 @@ const Home = ({ title, description }) => {
         };
     })
 
-    const rentStatus = apartments.filter(apartment => apartment.sale_status === 'rent')
-    const saleStatus = apartments.filter(apartment => apartment.sale_status === 'sale')
     const info = [
         {
-            number: saleStatus.length,
+            number: rentOrSale.sale,
             description: 'Homes For Sale',
             type: 'sale'
         },
         {
-            number: rentStatus.length,
+            number: rentOrSale.rent,
             description: 'Homes For Rent',
             type: 'rent'
 

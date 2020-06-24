@@ -113,7 +113,7 @@
 
 //////////////////////    Details    //////////////////////
 .apartmentDetails {
-  width: 30%;
+  width: fit-content;
 }
 
 //////////////////////    MAP    //////////////////////
@@ -126,7 +126,6 @@
     overflow: hidden;
     position: relative;
     height: 100%;
-    width: 100%;
   }
 
   .map-container iframe {
@@ -141,7 +140,16 @@
 @media (min-width: 576px) {
   .map-apartment {
     .map-container {
-      width: 60%;
+      width: 70%;
+      margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .map-apartment {
+    .map-container {
+      width: 30%;
       margin-left: auto;
     }
   }
