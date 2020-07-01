@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { cities } from '../../app-data/cities-data';
 import { getCitiesWithApartments } from '../../api/cities';
 
 import { BsSearch } from 'react-icons/bs';

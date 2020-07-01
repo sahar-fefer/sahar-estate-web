@@ -43,7 +43,6 @@ const SingleApartment = () => {
     const [apartmentData, setApartmentData] = useState({});
     const [apartmentCity, setApartmentCity] = useState({});
     const [apartmentImages, setApartmentImages] = useState([]);
-    const [forcrRender, setForcrRender] = useState(0);
     // const [items, setItems] = useState([]);
     // const [images, setImages] = useState(1);
 

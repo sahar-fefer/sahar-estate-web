@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { apartments } from '../../app-data/apartment-data';
 
 const NextOrPrevApartment = ({ apartment, type, items }) => {
     const [showPrice, setShowPrice] = useState(false);
