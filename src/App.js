@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 import Header from './components/header/header';
 import Home from './components/home/home';
@@ -14,10 +15,22 @@ import PageNotFound from './components/notFound/pageNotFound';
 import { getCitiesWithApartments } from './api/cities';
 
 function App() {
+  const [userId, setUserId] = useState('');
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    fetchCities()
+    fetchCities();
+    checkUser()
   }, [])
+
+  const checkUser = () => {
+    const cookie = Cookies.get('auth');
+    if (cookie) {
+      const userDitails = JSON.parse(cookie);
+      setUserId(userDitails.id);
+      setUserName(userDitails.first_name);
+    }
+  }
 
   const fetchCities = async () => {
     const cities = await getCitiesWithApartments();
@@ -26,7 +39,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header userName={userName}/>
       <div>
         <Switch>
           <Route exact path="/" component={Home} />

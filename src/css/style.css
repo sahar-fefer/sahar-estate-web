@@ -144,17 +144,23 @@ body {
   #header .logo-wrapper .big-logo {
     height: 35px; }
 
-#header .sign .header-option-wrapper {
+#header .hello {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+#header .header-option-wrapper {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding-left: 4px;
   padding-right: 4px; }
-  #header .sign .header-option-wrapper .header-option {
-    display: none;
+  #header .header-option-wrapper .header-option {
     text-align: right;
-    padding: 0 10px;
-    cursor: pointer; }
+    padding: 0 10px; }
+
+#header .sign .sign-header-option {
+  display: none;
+  cursor: pointer; }
 
 #header .sign .icon-astronaut {
   text-align: right;

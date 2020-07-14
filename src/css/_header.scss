@@ -32,7 +32,7 @@
             // margin-right: 25px;
             text-align: left;
             outline: none;
-        } 
+        }
     }
 
     //////////////////// Logo ////////////////////
@@ -48,19 +48,28 @@
         }
     }
 
+    //////////////////// Hello ////////////////////
+    .hello {
+    margin-top: auto;
+    margin-bottom: auto;
+    }
+
+    .header-option-wrapper {
+        justify-content: flex-end;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        .header-option {
+            text-align: right;
+            padding: 0 10px;
+        }
+    }
+
     //////////////////// Sign ////////////////////
     .sign {
-        .header-option-wrapper {
-            justify-content: flex-end;
-            padding-left: 4px;
-            padding-right: 4px;
-
-            .header-option {
-                display: none;
-                text-align: right;
-                padding: 0 10px;
-                cursor: pointer;
-            }
+        .sign-header-option {
+            display: none;
+            cursor: pointer;
         }
 
         .icon-astronaut {
