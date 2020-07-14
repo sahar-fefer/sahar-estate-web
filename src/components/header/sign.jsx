@@ -1,23 +1,113 @@
 import React, { useState } from 'react';
-import { FaUserAstronaut, FaPhone, FaUserNinja } from 'react-icons/fa';
+import Cookies from 'js-cookie';
+import { FaUserAstronaut, FaUserNinja } from 'react-icons/fa';
 import { MdEmail, MdFingerprint, MdSend } from 'react-icons/md';
 
-const Sign = () => {
+import { logIn, addUser } from '../../api/users';
+import { Link } from 'react-router-dom';
+
+const Sign = ({ userName }) => {
     const [sign, setSign] = useState('signIn');
+    const [authenticated, setAuthenticated] = useState(true);
+    const [signIn, setSignIn] = useState({
+        email: 'elikBelik@bombombom.com',
+        password: '1234'
+    });
+    const [signUp, setSignUp] = useState({
+        email: 'elikBelik@bom.com',
+        password: '1234',
+        first_name: 'elik',
+        last_name: 'belik',
+        role_id: 2
+    });
+
+    const onSignIn = async (e) => {
+        e.preventDefault();
+        const { email, password } = signIn;
+        const user = await logIn(email, password);
+        console.log("user", user);
+        if (user) {
+            setAuthenticated(true);
+        } else {
+            console.log("uncorecct");
+            setAuthenticated(false);
+        }
+        window.location.reload();
+    }
+
+    const onSignUp = async (e) => {
+        e.preventDefault();
+        const user = await addUser(signUp);
+        console.log("user", user);
+        if (user) {
+            setAuthenticated(true);
+        } else {
+            console.log("uncorecct");
+            setAuthenticated(false);
+        }
+    }
+
+    const onInputChange = (e) => {
+        sign === 'signIn'
+            ? setSignIn({
+                ...signIn,
+                [e.target.name]: e.target.value
+            })
+            : setSignUp({
+                ...signUp,
+                [e.target.name]: e.target.value
+            })
+    }
+
+    const signOut = () => {
+        const cookie = Cookies.remove('auth');
+        if (cookie) {
+            console.log('log out user');
+            const cookie = Cookies.get('auth');
+            console.log(cookie);
+            this.setState({
+                user: null
+            })
+        }
+        window.location.reload();
+    }
+
+    console.log('userName', userName);
     return (
         <div className={'sign col'}>
-            <ul className={'header-option-wrapper row'}>
-                <li className={'col icon-astronaut d-sm-none'} data-toggle={"modal"} data-target={"#exampleModalCenter"}>
-                    <FaUserAstronaut />
-                </li>
-                <li className={'bottom-line header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signIn')}>
-                    Sign In
-                </li>
-                <li className={'bottom-line header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'} data-toggle={"modal"} data-target={"#exampleModalCenter"} onClick={() => setSign('signUp')}>
-                    Sign Up
-                </li>
-            </ul>
+            {
+                userName
+                    ? < ul className={'header-option-wrapper row'}>
+                        <li className={'col icon-astronaut d-sm-none'} data-toggle={"modal"} data-target={"#exampleModalCenter"}>
+                            <FaUserAstronaut />
+                        </li>
+                        <li className={'bottom-line header-option sign-header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'}>
+                            <Link to='/myaccount'>{userName}</Link>
+                        </li>
+                        <li className={'bottom-line header-option sign-header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'}
+                            onClick={signOut}>
+                            Sign Out
+                    </li>
+                    </ul>
 
+                    : < ul className={'header-option-wrapper row'}>
+                        <li className={'col icon-astronaut d-sm-none'} data-toggle={"modal"} data-target={"#exampleModalCenter"}>
+                            <FaUserAstronaut />
+                        </li>
+                        <li className={'bottom-line header-option sign-header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'}
+                            data-toggle={"modal"}
+                            data-target={"#exampleModalCenter"}
+                            onClick={() => setSign('signIn')}>
+                            Sign In
+                </li>
+                        <li className={'bottom-line header-option sign-header-option col-auto d-sm-block pl-1 pr-1 ml-3 ml-3'}
+                            data-toggle={"modal"}
+                            data-target={"#exampleModalCenter"}
+                            onClick={() => setSign('signUp')}>
+                            Sign Up
+                </li>
+                    </ul>
+            }
             {/* <!-- Modal --> */}
             <div className={"modal fade"} id={"exampleModalCenter"} tabIndex={"-1"} role={"dialog"} aria-labelledby={"exampleModalCenterTitle"} aria-hidden={"true"}>
                 <div className="modal-dialog modal-dialog-centered" role="document">
@@ -33,85 +123,103 @@ const Sign = () => {
                         </div>
                         <div className="modal-body">
                             {sign === 'signIn' ?
-                                <div className='row'>
-                                    <form className="col content">
-                                        <div className="row">
-                                            <div className="col">
-                                                <MdEmail className={'icons'} />
-                                                <input id="email" type="email" name='email' className="input" />
-                                                {/* value={this.state.email} onChange={this.onInputChange}  */}
-                                                <label htmlFor="email">Email</label>
+                                <div>
+                                    <div className='row'>
+                                        <form className="col content">
+                                            <div className="row">
+                                                <div className="col">
+                                                    <MdEmail className={'icons'} />
+                                                    <input id="email"
+                                                        type="email"
+                                                        name='email'
+                                                        className="input"
+                                                        value={signIn.email}
+                                                        onChange={onInputChange} />
+                                                    <label htmlFor="email">Email</label>
+                                                </div>
+                                                <div className="col">
+                                                    <MdFingerprint className={'icons'} />
+                                                    <input id="password"
+                                                        type="password"
+                                                        name='password'
+                                                        className="input"
+                                                        value={signIn.password}
+                                                        onChange={onInputChange} />
+                                                    <label htmlFor="password">Password</label>
+                                                </div>
                                             </div>
-                                            <div className="col">
-                                                <MdFingerprint className={'icons'} />
-                                                <input id="password" type="password" name='password' className="input" />
-                                                {/* value={this.state.password} onChange={this.onInputChange}  */}
-                                                <label htmlFor="password">Password</label>
+                                            {
+                                                !authenticated &&
+                                                <div>
+                                                    username or password incorrect
                                             </div>
-                                        </div>
-                                        {/* {
-                                        this.state.loginFaild &&
-                                        <div>
-                                            username or password incorrect
-                                </div>
-                                    } */}
-                                    </form>
+                                            }
+                                        </form>
+                                    </div>
+                                    <MdSend className={'send'}
+                                        onClick={onSignIn}
+                                        data-dismiss="modal"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </MdSend>
                                 </div> :
-                                <div className='row'>
-                                    <form className="col content">
-                                        <div className="row">
-                                            <div className="col">
-                                                <MdEmail className={'icons'} />
-                                                <input id="email" type="email" name='email' className="input" />
-                                                {/* value={this.state.email} onChange={this.onInputChange}  */}
-                                                <label htmlFor="email">Email</label>
-                                            </div>
-                                            <div className="col">
-                                                <MdFingerprint className={'icons'} />
-                                                <input id="password" type="password" name='password' className="input" />
-                                                {/* value={this.state.password} onChange={this.onInputChange}  */}
-                                                <label htmlFor="password">Password</label>
-                                            </div>
+                                <div>
+                                    <div className="row">
+                                        <div className="col">
+                                            <FaUserNinja className={'icons'} />
+                                            <input id="first_name"
+                                                type="text"
+                                                name='first_name'
+                                                className="input"
+                                                value={signUp.first_name}
+                                                onChange={onInputChange} />
+                                            <label htmlFor="first_name">First Name</label>
                                         </div>
-                                        <div className="row">
-                                            <div className="col">
-                                                <FaUserNinja className={'icons'} />
-                                                <input id="first_name" type="text" name='text' className="input" />
-                                                {/* value={this.state.email} onChange={this.onInputChange}  */}
-                                                <label htmlFor="first_name">First Name</label>
-                                            </div>
-                                            <div className="col">
-                                                <FaUserNinja className={'icons'} />
-                                                <input id="last_name" type="text" name='text' className="input" />
-                                                {/* value={this.state.password} onChange={this.onInputChange}  */}
-                                                <label htmlFor="last_name">Last Name</label>
-                                            </div>
+                                        <div className="col">
+                                            <FaUserNinja className={'icons'} />
+                                            <input id="last_name"
+                                                type="text"
+                                                name='last_name'
+                                                className="input"
+                                                value={signUp.last_name}
+                                                onChange={onInputChange} />
+                                            <label htmlFor="last_name">Last Name</label>
                                         </div>
-                                        <div className="row">
-                                            <div className="col-6">
-                                                <FaPhone className={'icons'} />
-                                                <input id="phone" type="phone" name='phone' className="input" />
-                                                {/* value={this.state.password} onChange={this.onInputChange}  */}
-                                                <label htmlFor="phone">Phone</label>
-                                            </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className="col">
+                                            <MdEmail className={'icons'} />
+                                            <input id="email"
+                                                type="email"
+                                                name='email'
+                                                className="input"
+                                                value={signUp.email}
+                                                onChange={onInputChange} />
+                                            <label htmlFor="email">Email</label>
                                         </div>
-                                        {/* {
-                                        this.state.loginFaild &&
-                                        <div>
-                                            username or password incorrect
-                                </div>
-                                    } */}
-                                    </form>
+                                        <div className="col">
+                                            <MdFingerprint className={'icons'} />
+                                            <input id="password"
+                                                type="password"
+                                                name='password'
+                                                className="input"
+                                                value={signUp.password}
+                                                onChange={onInputChange} />
+                                            <label htmlFor="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <MdSend className={'send'}
+                                        onClick={onSignUp}
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </MdSend>
                                 </div>
                             }
-                            {/* <div className={'send-wrapper'}> */}
-                            <MdSend className={'send'} /> {/* onClick={this.onInputSubmit} */}
-                            {/* </div> */}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

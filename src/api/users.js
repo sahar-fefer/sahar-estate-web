@@ -20,19 +20,9 @@ export const getUserById = async (id) => {
     }
 }
 
-// export const getUserByEmail = async (email) => {
-//     try {
-//         const { data } = await fetcher.get(`/users/${email}`);
-//         return data;
-//     } catch (error) {
-//         console.log(error)
-//         throw error;
-//     }
-// }
-
-export const editUser = async (id, dataUser) => {
+export const editUser = async (id, userDate) => {
     try {
-        const { data } = await fetcher.put(`/users/${id}`, dataUser);
+        const { data } = await fetcher.put(`/users/${id}`, userDate);
         return data;
     } catch (error) {
         console.log(error)
@@ -42,8 +32,7 @@ export const editUser = async (id, dataUser) => {
 
 export const addUser = async (userDate) => {
     try {
-        const { role_id, first_name, last_name, email, password, phone } = userDate
-        const { data } = await fetcher.post(`/users?role_id=${role_id ? role_id : ''}&first_name=${first_name ? first_name : ''}&last_name=${last_name ? last_name : ''}&email=${email ? email : ''}&password=${password ? password : ''}&phone=${phone ? phone : ''};`);
+        const { data } = await fetcher.post(`/users`, userDate);
         return data;
     } catch (error) {
         console.log(error)

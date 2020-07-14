@@ -4,14 +4,28 @@ import React from 'react';
 import Options from './options';
 import Logo from './logo';
 import Sign from './sign';
+import Hello from './hello';
 
-const Header = () => {
+// const Header = () => {
+//     return (
+//         <div id={'header'} className={'container-fluid'}>
+//             <div className={'row'}>
+//                 <Options />
+//                 <Logo />
+//                 <Sign />
+//             </div>
+//         </div>
+//     );
+// };
+
+const Header = ({ userName }) => {
+    console.log('userName', userName);
     return (
         <div id={'header'} className={'container-fluid'}>
             <div className={'row'}>
                 <Options />
                 <Logo />
-                <Sign />
+                <Sign  userName={userName}/>
             </div>
         </div>
     );
