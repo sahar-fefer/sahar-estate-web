@@ -2,11 +2,11 @@ import React from "react";
 import Card from "./card/card";
 
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-const Gallery = ({ items, sizeGallery, nextPrevPage, page, size }) => {
+const Gallery = ({ items, sizeGallery, nextPrevPage, page, size, title }) => {
 
     return (
         <div id={"gallery"} className={"container-fluid"}>
-            <h4 className={"mt-3"}>Real Estate & Homes For Sale</h4>
+            <h4 className={"mt-3"}>{title ? title : 'Real Estate & Homes For Sale'}</h4>
             <div className={'row'}>
                 <div className={"col-auto mt-auto mb-auto"}>{`${items ? items.length : 0} Homes`}</div>
                 <header className={"mt-auto mb-auto ml-2"}>Set Size</header>

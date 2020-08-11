@@ -23,9 +23,13 @@ body {
   width: 100%; }
   body li {
     list-style: none; }
-  body button, body button:hover, body a, body a:hover {
+  body button,
+  body button:hover,
+  body a,
+  body a:hover {
     color: #333; }
-  body button:hover, body a:hover {
+  body button:hover,
+  body a:hover {
     text-decoration: none; }
   body button {
     border: none;
@@ -47,9 +51,9 @@ body {
     width: 100%; }
   body .bottom-line {
     border-bottom: 3px solid transparent;
-    -webkit-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out; }
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
     body .bottom-line:hover {
       border-bottom: 3px solid #00d99d; }
   body .bottom-line-chosed {
@@ -85,6 +89,17 @@ body {
     padding: 2px 5px;
     margin: 0;
     z-index: 1; }
+  body .burger-button {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left; }
+    body .burger-button .lineBurgerButton {
+      width: 23px;
+      height: 2px;
+      background-color: #333;
+      border-radius: 4px;
+      margin: 4px; }
 
 /* /////////////////////////    colors    /////////////////////////// */
 /* /////////////////////////    card    /////////////////////////// */
@@ -115,18 +130,6 @@ body {
 #header .burger-button,
 #header .icon {
   padding: 10px; }
-
-#header .options .burger-button {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: left; }
-  #header .options .burger-button .lineBurgerButton {
-    width: 23px;
-    height: 2px;
-    background-color: #333;
-    border-radius: 4px;
-    margin: 4px; }
 
 #header .options li {
   text-align: left;
@@ -683,6 +686,83 @@ body {
   .map-apartment .map-container {
     width: 30%;
     margin-left: auto; } }
+
+#mainUserPage .burger-button {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  display: block; }
+  #mainUserPage .burger-button .lineBurgerButton {
+    width: 23px;
+    height: 2px;
+    background-color: grey;
+    border-radius: 4px;
+    margin: 4px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  #mainUserPage .burger-button:hover .lineBurgerButton {
+    background-color: red; }
+
+#mainUserPage .sideNav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 248px;
+  z-index: 10; }
+  #mainUserPage .sideNav .closeNav {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: small; }
+    #mainUserPage .sideNav .closeNav:hover {
+      border: 0; }
+  #mainUserPage .sideNav a {
+    text-decoration: none !important; }
+  #mainUserPage .sideNav .myBtn {
+    display: block;
+    margin-left: 15px; }
+  #mainUserPage .sideNav .myBtn:focus, #mainUserPage .sideNav .myBtn:active {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  #mainUserPage .sideNav ul {
+    margin: 0;
+    -webkit-padding-start: 20px;
+    padding-inline-start: 20px; }
+    #mainUserPage .sideNav ul li {
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding-left: 2.5px;
+      padding-right: 2.5px;
+      margin-top: .25rem;
+      margin-bottom: .25rem;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      #mainUserPage .sideNav ul li:hover {
+        border-bottom: 2px solid red;
+        color: red; }
+  #mainUserPage .sideNav button {
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  #mainUserPage .sideNav button:hover {
+    text-decoration: none;
+    border-bottom: 2px solid red;
+    color: red; }
 
 #not-pound {
   display: -webkit-box;

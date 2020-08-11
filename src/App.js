@@ -10,7 +10,8 @@ import Cookies from 'js-cookie';
 import Header from './components/header/header';
 import Home from './components/home/home';
 import GalleryAndFilter from './components/galleryAndSearch/galleryAndFilter';
-import singleApartment from './components/singleApartment/singleApartment';
+import SingleApartment from './components/singleApartment/singleApartment';
+import MainUserPage from './components/userPage/mainUserPage';
 import PageNotFound from './components/notFound/pageNotFound';
 import { getCitiesWithApartments } from './api/cities';
 
@@ -44,7 +45,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/gallery" component={GalleryAndFilter} />
-          <Route path="/apartment/:id" component={singleApartment} />
+          <Route path="/apartment/:id" component={SingleApartment} />
+          <Route path="/myAccount" component={MainUserPage} />
           <Route path='/404' component={PageNotFound} />
           <Redirect from='*' to='/404' />
         </Switch>
