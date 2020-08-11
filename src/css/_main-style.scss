@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 body {
   color: $text;
@@ -8,25 +8,29 @@ body {
   li {
     list-style: none;
   }
-  
-  button, button:hover, a, a:hover {
+
+  button,
+  button:hover,
+  a,
+  a:hover {
     color: $text;
   }
-  
-  button:hover, a:hover {
+
+  button:hover,
+  a:hover {
     text-decoration: none;
   }
 
   button {
     border: none;
-    background: none; 
+    background: none;
   }
 
   // Global Classes
   .perfect-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cover-photo {
@@ -38,8 +42,8 @@ body {
 
   .bottom-line {
     border-bottom: 3px solid transparent;
-    transition: all .2s ease-in-out;
-    
+    transition: all 0.2s ease-in-out;
+
     &:hover {
       border-bottom: 3px solid $primary;
     }
@@ -48,7 +52,7 @@ body {
     border-bottom: 3px solid $primary_dark !important;
   }
 
-  .left-top { 
+  .left-top {
     background-color: $secondary;
     color: white;
     border-radius: 5px;
@@ -61,7 +65,7 @@ body {
 
   .left-bottom {
     color: white;
-    background-color: rgba($color: black, $alpha: .4);
+    background-color: rgba($color: black, $alpha: 0.4);
     border-radius: 5px;
     font-weight: bold;
     position: absolute;
@@ -74,7 +78,7 @@ body {
 
   .right-top {
     color: white;
-    background-color: rgba($color: black, $alpha: .4);
+    background-color: rgba($color: black, $alpha: 0.4);
     border-radius: 5px;
     font-weight: bold;
     position: absolute;
@@ -84,5 +88,16 @@ body {
     margin: 0;
     z-index: 1;
   }
+  .burger-button {
+    align-items: center;
+    text-align: left;
 
+    .lineBurgerButton {
+      width: 23px;
+      height: 2px;
+      background-color: $text;
+      border-radius: 4px;
+      margin: 4px;
+    }
+  } 
 }

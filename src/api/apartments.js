@@ -60,15 +60,15 @@ export const getRentSaleApartments = async () => {
 //     }
 // }
 
-// export const getApartmentsUserByStatus = async (user_id, status) => {
-//     try {
-//         const { data: apartments } = await fetcher.get(`/apartments/${user_id}/${status}`)
-//         return apartments;
-//     } catch (error) {
-//         console.log(error)
-//         throw error;
-//     }
-// }
+export const getApartmentsUserByStatus = async (user_id, status) => {
+    try {
+        const { data: apartments } = await fetcher.get(`/apartments/${user_id}/${status}`)
+        return apartments;
+    } catch (error) {
+        console.log(error)
+        throw error;
+    }
+}
 
 // export const addApartment = async (formData) => {
 //     try {
