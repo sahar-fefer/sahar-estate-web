@@ -37,6 +37,7 @@ class Account extends Component {
         const { editAccount, passwordHashed } = this;
         return (
             <div>
+                <h4 className={"mt-3"}>Edit And Apdate My Profile</h4>
                 {update ?
                     <form className="ml-3">
                         <div className="form-row">
@@ -63,12 +64,12 @@ class Account extends Component {
                     </form> :
                     <div className="ml-3">
                         <div className="row">
-                            <div className="mb-2 col-md-6">First Name: {first_name}</div>
-                            <div className="mb-2 col-md-6">Last Name: {last_name}</div>
+                            <div className="mb-2 col-md-6 overflow-auto">First Name: {first_name}</div>
+                            <div className="mb-2 col-md-6 overflow-auto">Last Name: {last_name}</div>
                         </div>
                         <div className="row">
-                            <div className="mb-2 col-md-6">Email: {email}</div>
-                            <div className="mb-2 col-md-6">Password: {passwordHashed()}</div>
+                            <div className="mb-2 col-md-6  overflow-auto">Email: {email}</div>
+                            <div className="mb-2 col-md-6 overflow-hidden">Password: {passwordHashed()}</div>
                         </div>
                     </div>
                 }
