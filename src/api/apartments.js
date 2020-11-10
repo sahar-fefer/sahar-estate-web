@@ -70,15 +70,15 @@ export const getApartmentsUserByStatus = async (user_id, status) => {
     }
 }
 
-// export const addApartment = async (formData) => {
-//     try {
-//         const { data } = await fetcher.post(`/apartments`, formData);
-//         return data;
-//     } catch (error) {
-//         console.dir(error);
-//         throw error;
-//     }
-// }
+export const addApartment = async (formData) => {
+    try {
+        const { data } = await fetcher.post(`/apartments`, formData);
+        return data;
+    } catch (error) {
+        console.dir(error);
+        throw error;
+    }
+}
 
 // export const updateAvailabilityApartment = async (apartment_id, availability) => {
 //     try {

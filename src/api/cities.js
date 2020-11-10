@@ -10,8 +10,8 @@ export const getCitiesById = async cityId => {
     return cities;
 }
 
-// export const getCities = async () => {
-//     const { data: cities } = await fetcher.get('/cities');
-//     return cities;
-// }
+export const getCities = async () => {
+    const { data: cities } = await fetcher.get('/cities');
+    return cities;
+}
 
