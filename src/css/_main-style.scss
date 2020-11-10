@@ -2,7 +2,6 @@
 
 body {
   color: $text;
-  outline: none !important;
   width: 100%;
 
   li {
@@ -14,6 +13,7 @@ body {
   a,
   a:hover {
     color: $text;
+    outline: none !important;
   }
 
   button:hover,

@@ -41,14 +41,11 @@ export const addUser = async (userDate) => {
 }
 
 export const logIn = async (email, password) => {
-    console.log("email", email, "password", password);
     try {
         const { data } = await fetcher.post(`/users/login`, { email, password });
         loginSubscribers.forEach(sub => sub());
-        console.log(data)
         return data;
     } catch (error) {
-        console.log(error)
         throw error;
     }
 }
